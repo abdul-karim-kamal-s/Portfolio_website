@@ -47,7 +47,7 @@ const About = () => {
             className="flex items-center justify-center w-full h-full relative"
           >
             <p className="flex items-end text-5xl text-neutral-600 font-bold select-none opacity-40">
-              Robotics & Embedded AI
+              Robotics & Embedded Systems
             </p>
             <Card
               style={{ rotate: "75deg", top: "28%", left: "18%" }}
@@ -56,7 +56,7 @@ const About = () => {
             />
             <Card
               style={{ rotate: "-30deg", top: "58%", left: "42%" }}
-              text="EMBEDDED AI"
+              text="EMBEDDED SYSTEMS"
               containerRef={grid2Container}
             />
             <Card

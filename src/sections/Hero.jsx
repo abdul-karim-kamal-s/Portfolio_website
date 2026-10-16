@@ -6,12 +6,15 @@ import { Astronaut } from "../components/Astronaut";
 const Hero = () => {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-between overflow-hidden bg-[#232323]" id="home">
+      {/* Background & Vignette Overlays */}
       <div aria-hidden="true" className="absolute inset-0">
         <img
           src="/assets/hero-circuit.png"
           alt=""
           className="h-full w-full object-cover object-center"
         />
+        {/* Deep black shadow on the left 20% to 30% for text contrast */}
+        <div className="absolute inset-y-0 left-0 z-0 w-full sm:w-1/3 lg:w-1/4 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
       </div>
 
       {/* Grid & Content Container */}
@@ -29,7 +32,6 @@ const Hero = () => {
             onCreated={({ gl }) => gl.setClearColor("#000000", 0)}
           >
             <Suspense fallback={null}>
-              {/* These are Three.js JSX elements, not DOM attributes. */}
               {/* eslint-disable-next-line react/no-unknown-property */}
               <ambientLight intensity={1.5} />
               {/* eslint-disable-next-line react/no-unknown-property */}
