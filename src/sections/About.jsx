@@ -13,15 +13,16 @@ const About = () => {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
         {/* Grid 1: Profile & Resume */}
-        <div className="flex items-end grid-default-color grid-1 relative overflow-hidden bg-[#191919]/90 rounded-2xl">
+        <div className="flex items-end grid-default-color grid-1 relative overflow-hidden rounded-2xl">
           <img
-            src="assets/card.webp"
-            alt="Profile background"
-            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5] opacity-30 object-cover"
+            src="/assets/card.webp"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-25"
           />
-
+          <div className="absolute inset-0 bg-gradient-to-t from-[#232323]/80 via-[#232323]/45 to-[#232323]/25" />
           <div className="z-10 p-2 sm:p-4">
-            <p className="headtext">Hi, I'm Abdul</p>
+            <p className="headtext">Hi, I&apos;m Abdul</p>
             <p className="subtext">
               As a B.E. Mechanical Engineering student at SKCET, I am passionate about building intelligent systems where mechanics meets electronics and robotics. I enjoy turning ideas into functional prototypes through automation, embedded systems, mechanical design, and hands-on engineering.
             </p>
@@ -29,7 +30,7 @@ const About = () => {
             {/* Download Resume Button */}
             <div className="mt-4">
               <a
-                href="/assets/projects/Abdul_CV.pdf"
+                href="/assets/projects/Abdul_Karim_Kamal_S_Resume.pdf"
                 download="Abdul_Karim_Kamal_S_Resume.pdf"
                 className="inline-block px-6 py-2.5 bg-gradient-to-b from-[#f4f4f5] to-[#c4c4c7] hover:from-white hover:to-[#e4e4e7] text-[#111111] border border-white/80 hover:border-white font-semibold rounded-full transition-all duration-300 shadow-[0_3px_16px_rgba(255,255,255,0.16)] hover:shadow-[0_4px_20px_rgba(255,255,255,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#191919] cursor-pointer text-center text-sm"
               >
@@ -37,8 +38,6 @@ const About = () => {
               </a>
             </div>
           </div>
-
-          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-[#111111]" />
         </div>
 
         {/* Grid 2: Core Engineering & Robotics Cards */}
@@ -88,23 +87,45 @@ const About = () => {
 
             {/* Software Logo Image Cards */}
             <Card
-              style={{ rotate: "-45deg", top: "8%", left: "8%" }}
-              image="assets/logos/soildedge.webp"
-              containerRef={grid2Container}
-            />
-            <Card
               style={{ rotate: "15deg", top: "6%", left: "68%" }}
               image="assets/logos/autocad.svg"
+              alt="AutoCAD"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-25deg", top: "35%", left: "78%" }}
               image="assets/logos/fusion.png"
+              alt="Fusion 360"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "25deg", top: "70%", left: "5%" }}
               image="assets/logos/soildworks.png"
+              alt="SolidWorks"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "12deg", top: "10%", left: "78%", width: "3.5rem", padding: "4px", backgroundColor: "white", borderRadius: "8px" }}
+              image="/assets/logos/arduino.webp"
+              alt="Arduino"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "-8deg", top: "46%", left: "24%", width: "3.5rem", padding: "4px", backgroundColor: "white", borderRadius: "8px" }}
+              image="/assets/logos/c-language.png"
+              alt="C programming"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "-12deg", top: "70%", left: "52%", width: "3.5rem", padding: "4px", backgroundColor: "white", borderRadius: "8px" }}
+              image="/assets/logos/esp32-chip.png"
+              alt="ESP32"
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "10deg", top: "38%", left: "58%", width: "3.5rem", padding: "4px", backgroundColor: "white", borderRadius: "8px" }}
+              image="/assets/logos/ai-chip.jpg"
+              alt="Artificial intelligence"
               containerRef={grid2Container}
             />
           </div>

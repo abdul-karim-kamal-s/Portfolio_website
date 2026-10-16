@@ -29,7 +29,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            Robotics & Embedded Systems<br />Engineer
+            Mechanical <br />Engineer
           </motion.p>
           <motion.div
             variants={variants}
@@ -50,7 +50,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            Intelligent Automation & Control
+            Robotics & Embedded AI
           </motion.p>
         </div>
       </div>
@@ -74,7 +74,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            Robotics & Embedded Engineer
+            Mechanical Engineer
           </motion.p>
           <motion.div
             variants={variants}
@@ -94,7 +94,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            Intelligent Automation
+            Robotics & Embedded AI
           </motion.p>
         </div>
       </div>

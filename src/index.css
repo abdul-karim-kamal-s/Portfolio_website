@@ -3,14 +3,14 @@
 
 @theme {
   /* Monochrome graphite and silver palette sampled from the circuit background */
-  --color-primary: #111111;
-  --color-midnight: #191919;
-  --color-navy: #222222;
-  --color-indigo: #2b2b2b;
-  --color-storm: #383838;
+  --color-primary: #232323;
+  --color-midnight: #232323;
+  --color-navy: #232323;
+  --color-indigo: #232323;
+  --color-storm: #232323;
   --color-aqua: #f4f4f5;
   --color-mint: #e4e4e7;
-  --color-royal: #272727;
+  --color-royal: #232323;
   --color-lavender: #3d3d3d;
   --color-fuchsia: #e4e4e7;
   --color-orange: #d4d4d8;
@@ -52,8 +52,13 @@
   }
 }
 
+html,
+body,
+#root {
+  background-color: #232323;
+}
+
 body {
-  background: #111111;
   font-family: "Funnel Display", sans-serif;
   color: #f1f5f9;
   scroll-behavior: smooth;
@@ -65,7 +70,7 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #111111;
+  background: #232323;
 }
 ::-webkit-scrollbar-thumb {
   background: #383838;
@@ -142,15 +147,15 @@ body {
 
 /* Monochromatic Card Containers */
 .grid-default-color {
-  @apply p-6 bg-gradient-to-b from-[#272727] to-[#191919] border border-neutral-700 rounded-2xl hover:border-neutral-300 transition-all duration-300;
+  @apply p-6 bg-[#232323] border border-neutral-700 rounded-2xl hover:border-neutral-300 transition-all duration-300;
 }
 
 .grid-special-color {
-  @apply p-6 bg-gradient-to-b from-[#303030] to-[#222222] border border-neutral-600 rounded-2xl hover:border-neutral-200 transition-all duration-300;
+  @apply p-6 bg-[#232323] border border-neutral-600 rounded-2xl hover:border-neutral-200 transition-all duration-300;
 }
 
 .grid-black-color {
-  @apply p-6 bg-gradient-to-tl from-[#272727] via-[#191919] to-[#272727] border border-neutral-700 rounded-2xl hover:border-neutral-300 transition-all duration-300;
+  @apply p-6 bg-[#232323] border border-neutral-700 rounded-2xl hover:border-neutral-300 transition-all duration-300;
 }
 
 /* Contact Section */

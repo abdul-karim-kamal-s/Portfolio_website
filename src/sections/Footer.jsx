@@ -65,7 +65,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-white/10 pt-8 pb-10 c-space bg-[#111111]/50 backdrop-blur-md">
+    <footer className="w-full border-t border-white/10 pt-8 pb-10 c-space bg-[#232323]/50 backdrop-blur-md">
       <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 max-w-7xl mx-auto">
         
         {/* Links */}
@@ -88,7 +88,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
               aria-label={social.name}
-              className={`group flex items-center justify-center w-14 h-14 rounded-full border border-white/15 bg-[#191919]/90 hover:-translate-y-2 hover:scale-110 active:scale-95 transition-all duration-300 ease-out shadow-md ${social.hoverClass}`}
+              className={`group flex items-center justify-center w-14 h-14 rounded-full border border-white/15 bg-[#232323] hover:-translate-y-2 hover:scale-110 active:scale-95 transition-all duration-300 ease-out shadow-md ${social.hoverClass}`}
             >
               {social.icon}
             </a>
