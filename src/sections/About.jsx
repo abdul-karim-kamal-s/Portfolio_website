@@ -67,7 +67,7 @@ const About = () => {
             />
             <Card
               style={{ rotate: "-45deg", top: "52%", left: "2%" }}
-              text="SOLID EDGE"
+              text="SOLIDWORKS"
               containerRef={grid2Container}
             />
             <Card
