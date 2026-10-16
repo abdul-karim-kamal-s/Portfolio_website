@@ -71,12 +71,12 @@ const About = () => {
             />
             <Card
               style={{ rotate: "20deg", top: "12%", left: "36%" }}
-              text="KINEMATICS"
+              text="AI & MACHINE LEARNING"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "30deg", top: "68%", left: "72%" }}
-              text="FABRICATION"
+              text="FUSION 360"
               containerRef={grid2Container}
             />
             <Card
@@ -137,7 +137,7 @@ const About = () => {
             <p className="headtext">Location & Collaboration</p>
             <p className="subtext">
               Based in Coimbatore, Tamil Nadu, India. Open to robotics engineering roles,
-              smart automation projects, and multidisciplinary research worldwide.
+              smart automation projects and multidisciplinary research worldwide.
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]">
@@ -160,7 +160,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headtext">Robotics, Embedded & CAD Stack</p>
             <p className="subtext">
-              Hands-on expertise across AutoCAD, Fusion 360, Solid Edge, ESP32 microcontrollers, autonomous control, and Embodied AI. Certified Junior Robotic Program Operator with industrial training across Titan, Ashok Leyland, and KTD.
+              Hands-on expertise across AutoCAD, Fusion 360, Solid Edge, ESP32 microcontrollers, autonomous control and Embodied AI. Certified Junior Robotic Program Operator with industrial training across Titan, Ashok Leyland and Maruti Suzuki Arena.
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
