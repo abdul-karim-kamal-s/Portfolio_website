@@ -14,21 +14,16 @@ function Navigation({ onClick }) {
           About
         </a>
       </li>
-
-      {/* 1. Projects Link First */}
       <li className="nav-li">
         <a className="nav-link" href="#projects" onClick={onClick}>
           Projects
         </a>
       </li>
-
-      {/* 2. Credentials Link Next */}
       <li className="nav-li">
         <a className="nav-link" href="#credentials" onClick={onClick}>
           Credentials
         </a>
       </li>
-
       <li className="nav-li">
         <a className="nav-link" href="#contact" onClick={onClick}>
           Contact
@@ -46,44 +41,47 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
-      <div className="mx-auto c-space max-w-7xl">
-        <div className="flex items-center justify-between py-2 sm:py-0">
+    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-900 bg-black/80 backdrop-blur-md transition-all duration-300">
+      <div className="mx-auto max-w-7xl c-space">
+        <div className="flex items-center justify-between py-4">
           <a
-            href="/"
-            className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
+            href="#home"
+            className="flex items-center gap-2 font-mono text-base font-semibold tracking-wider text-white transition-colors hover:text-neutral-300"
           >
-            Mathesh
+            ABDUL KARIM KAMAL S
           </a>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
+            aria-label="Toggle navigation"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-800 bg-neutral-950 text-neutral-400 transition-colors hover:border-neutral-700 hover:text-white focus:outline-none sm:hidden"
           >
             <img
               src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
-              className="w-6 h-6"
-              alt="toggle"
+              className="h-5 w-5 invert"
+              alt="toggle menu"
             />
           </button>
+
           <nav className="hidden sm:flex">
-            <Navigation />
-          </nav>
-        </div>
-      </div>
-      {isOpen && (
-        <motion.div
-          className="block overflow-hidden text-center sm:hidden"
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          style={{ maxHeight: "100vh" }}
-          transition={{ duration: 0.3 }}
-        >
-          <nav className="pb-5">
             <Navigation onClick={closeMenu} />
           </nav>
-        </motion.div>
-      )}
-    </div>
+        </div>
+        {isOpen && (
+          <motion.div
+            className="block overflow-hidden text-center sm:hidden"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            style={{ maxHeight: "100vh" }}
+            transition={{ duration: 0.3 }}
+          >
+            <nav className="pb-5">
+              <Navigation onClick={closeMenu} />
+            </nav>
+          </motion.div>
+        )}
+      </div>
+    </header>
   );
 };
 

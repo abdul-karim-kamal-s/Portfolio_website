@@ -13,7 +13,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
-    <div className="container mx-auto max-w-7xl">
+    <div className="w-full">
       <Navbar />
 
       <section id="home">
