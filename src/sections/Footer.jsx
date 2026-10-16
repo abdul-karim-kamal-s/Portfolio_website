@@ -5,7 +5,7 @@ const socialLinks = [
     id: 1,
     name: "GitHub",
     link: "https://github.com/Matheshs777",
-    hoverClass: "hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.6)]",
+    hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
     icon: (
       <svg className="w-7 h-7 fill-white group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -16,7 +16,7 @@ const socialLinks = [
     id: 2,
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/mathesh-s-598ab7367",
-    hoverClass: "hover:border-sky-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.6)]",
+    hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
         <path fill="#0A66C2" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
@@ -27,7 +27,7 @@ const socialLinks = [
     id: 3,
     name: "Instagram",
     link: "https://www.instagram.com/mathesh_x_7?igsh=MWk3ejQ5MTBmZmNrZg%3D%3D",
-    hoverClass: "hover:border-pink-500 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)]",
+    hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
         <radialGradient id="igGrad" cx="30%" cy="107%" r="138%">
@@ -45,7 +45,7 @@ const socialLinks = [
     id: 4,
     name: "Gmail",
     link: "mailto:matheshs777@gmail.com",
-    hoverClass: "hover:border-red-500 hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]",
+    hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
         {/* Blue Left Leg */}
@@ -65,11 +65,11 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-white/10 pt-8 pb-10 c-space bg-black/40 backdrop-blur-md">
+    <footer className="w-full border-t border-white/10 pt-8 pb-10 c-space bg-[#111111]/50 backdrop-blur-md">
       <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 max-w-7xl mx-auto">
         
         {/* Links */}
-        <div className="flex gap-2 text-neutral-400 text-xs sm:text-sm">
+        <div className="flex gap-2 text-neutral-300 text-xs sm:text-sm">
           <a href="/portfolio_terms.pdf" target="_blank" rel="noreferrer" className="hover:text-white transition-colors duration-300">
             Terms & Conditions
           </a>
@@ -88,7 +88,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
               aria-label={social.name}
-              className={`group flex items-center justify-center w-14 h-14 rounded-full border border-white/15 bg-black/80 hover:-translate-y-2 hover:scale-110 active:scale-95 transition-all duration-300 ease-out shadow-md ${social.hoverClass}`}
+              className={`group flex items-center justify-center w-14 h-14 rounded-full border border-white/15 bg-[#191919]/90 hover:-translate-y-2 hover:scale-110 active:scale-95 transition-all duration-300 ease-out shadow-md ${social.hoverClass}`}
             >
               {social.icon}
             </a>
@@ -96,7 +96,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="text-neutral-400 text-xs sm:text-sm text-center">
+        <p className="text-neutral-300 text-xs sm:text-sm text-center">
           © {new Date().getFullYear()} Mathesh S. All rights reserved.
         </p>
 

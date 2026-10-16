@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-neutral-900 bg-black/80 backdrop-blur-md transition-all duration-300">
+    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-white/10 bg-[#111111]/90 backdrop-blur-md transition-all duration-300">
       <div className="mx-auto max-w-7xl c-space">
         <div className="flex items-center justify-between py-4">
           <a

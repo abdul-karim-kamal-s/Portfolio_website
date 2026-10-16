@@ -50,7 +50,7 @@ const ProjectDetails = ({
               href={href} 
               target="_blank" 
               rel="noreferrer"
-              className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-[#4ade80]"
+              className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-white"
             >
               View Project{" "}
               <img src="assets/arrow-up.svg" className="size-4" alt="arrow" />

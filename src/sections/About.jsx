@@ -13,7 +13,7 @@ const About = () => {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
         {/* Grid 1: Profile & Resume */}
-        <div className="flex items-end grid-default-color grid-1 relative overflow-hidden bg-black/80 rounded-2xl">
+        <div className="flex items-end grid-default-color grid-1 relative overflow-hidden bg-[#191919]/90 rounded-2xl">
           <img
             src="assets/card.webp"
             alt="Profile background"
@@ -31,14 +31,14 @@ const About = () => {
               <a
                 href="/assets/projects/Abdul_CV.pdf"
                 download="Abdul_Karim_Kamal_S_Resume.pdf"
-                className="inline-block px-6 py-2.5 bg-white hover:bg-neutral-200 text-black font-semibold rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] cursor-pointer text-center text-sm"
+                className="inline-block px-6 py-2.5 bg-gradient-to-b from-[#f4f4f5] to-[#c4c4c7] hover:from-white hover:to-[#e4e4e7] text-[#111111] border border-white/80 hover:border-white font-semibold rounded-full transition-all duration-300 shadow-[0_3px_16px_rgba(255,255,255,0.16)] hover:shadow-[0_4px_20px_rgba(255,255,255,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#191919] cursor-pointer text-center text-sm"
               >
                 Download Resume
               </a>
             </div>
           </div>
 
-          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-black" />
+          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-[#111111]" />
         </div>
 
         {/* Grid 2: Core Engineering & Robotics Cards */}
@@ -139,7 +139,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headtext">Robotics, Embedded & CAD Stack</p>
             <p className="subtext">
-              Hands-on expertise across AutoCAD, Fusion 360, ANSYS, Solid Edge, ESP32 microcontrollers, autonomous control, and Embodied AI. Certified Junior Robotic Program Operator with industrial training across Titan, Ashok Leyland, and KTD.
+              Hands-on expertise across AutoCAD, Fusion 360, Solid Edge, ESP32 microcontrollers, autonomous control, and Embodied AI. Certified Junior Robotic Program Operator with industrial training across Titan, Ashok Leyland, and KTD.
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">

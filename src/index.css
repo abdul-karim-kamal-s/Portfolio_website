@@ -2,22 +2,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Industrial Black, Grey & White Theme Variables */
-  --color-primary: #000000;
-  --color-midnight: #080808;
-  --color-navy: #121212;
-  --color-indigo: #171717;
-  --color-storm: #242424;
-
-  /* Monochromatic mappings for existing utility tokens */
-  --color-aqua: #f5f5f5;
-  --color-mint: #e5e5e5;
-  --color-royal: #1c1c1c;
-  --color-lavender: #2b2b2b;
-  --color-fuchsia: #a3a3a3;
-  --color-orange: #737373;
-  --color-sand: #525252;
-  --color-coral: #404040;
+  /* Monochrome graphite and silver palette sampled from the circuit background */
+  --color-primary: #111111;
+  --color-midnight: #191919;
+  --color-navy: #222222;
+  --color-indigo: #2b2b2b;
+  --color-storm: #383838;
+  --color-aqua: #f4f4f5;
+  --color-mint: #e4e4e7;
+  --color-royal: #272727;
+  --color-lavender: #3d3d3d;
+  --color-fuchsia: #e4e4e7;
+  --color-orange: #d4d4d8;
+  --color-sand: #a1a1aa;
+  --color-coral: #71717a;
 
   --animate-orbit: orbit 50s linear infinite;
   @keyframes orbit {
@@ -55,9 +53,9 @@
 }
 
 body {
-  background: #000000;
+  background: #111111;
   font-family: "Funnel Display", sans-serif;
-  color: #ededed;
+  color: #f1f5f9;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -67,14 +65,14 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #111111;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #383838;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
+  background: #71717a;
 }
 
 /* Grayscale Text Selection */
@@ -104,7 +102,7 @@ body {
 }
 
 .subtext {
-  @apply text-neutral-400 text-sm md:text-base text-pretty leading-relaxed;
+  @apply text-neutral-200 text-sm md:text-base text-pretty leading-relaxed;
 }
 
 /* Navigation */
@@ -113,7 +111,7 @@ body {
 }
 
 .nav-li {
-  @apply text-neutral-400 hover:text-white max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 transition-colors;
+  @apply text-neutral-300 hover:text-white max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 transition-colors;
 }
 
 .nav-link {
@@ -144,26 +142,26 @@ body {
 
 /* Monochromatic Card Containers */
 .grid-default-color {
-  @apply p-6 bg-gradient-to-b from-[#141414] to-[#0a0a0a] border border-neutral-800 rounded-2xl hover:border-neutral-600 transition-all duration-300;
+  @apply p-6 bg-gradient-to-b from-[#272727] to-[#191919] border border-neutral-700 rounded-2xl hover:border-neutral-300 transition-all duration-300;
 }
 
 .grid-special-color {
-  @apply p-6 bg-gradient-to-b from-[#1c1c1c] to-[#101010] border border-neutral-700 rounded-2xl hover:border-neutral-500 transition-all duration-300;
+  @apply p-6 bg-gradient-to-b from-[#303030] to-[#222222] border border-neutral-600 rounded-2xl hover:border-neutral-200 transition-all duration-300;
 }
 
 .grid-black-color {
-  @apply p-6 bg-gradient-to-tl from-[#141414] via-[#0a0a0a] to-[#141414] border border-neutral-800 rounded-2xl hover:border-neutral-600 transition-all duration-300;
+  @apply p-6 bg-gradient-to-tl from-[#272727] via-[#191919] to-[#272727] border border-neutral-700 rounded-2xl hover:border-neutral-300 transition-all duration-300;
 }
 
 /* Contact Section */
 .field-label {
-  @apply text-sm font-medium text-neutral-300 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  @apply text-sm font-medium text-neutral-200 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
 }
 
 .field-input {
-  @apply w-full min-h-10 rounded-md px-3 py-2 text-sm bg-neutral-900/80 text-white transition duration-200 placeholder-neutral-500 border border-neutral-800 mt-2;
+  @apply w-full min-h-10 rounded-md px-3 py-2 text-sm bg-neutral-950/80 text-white transition duration-200 placeholder-neutral-400 border border-neutral-700 mt-2;
 }
 
 .field-input-focus {
-  @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-400 focus-visible:border-neutral-400;
+  @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-300 focus-visible:border-neutral-300;
 }

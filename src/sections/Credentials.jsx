@@ -40,7 +40,7 @@ const Credentials = () => {
         {images.map((src, index) => (
           <div 
             key={index} 
-            className="overflow-hidden rounded-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-black-200 group cursor-pointer"
+            className="overflow-hidden rounded-xl border border-neutral-700 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-[#222222] group cursor-pointer"
           >
             <img 
               src={src} 

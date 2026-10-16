@@ -5,16 +5,16 @@ import { Astronaut } from "../components/Astronaut";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-between overflow-hidden bg-black" id="home">
+    <section className="relative min-h-screen w-full flex items-center justify-between overflow-hidden bg-[#111111]" id="home">
       {/* 1. Full-screen Background Illustration */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/assets/robot-human.jpg"
+          src="/assets/hero-circuit.png"
           alt="Hero Background"
-          className="w-full h-full object-cover object-center grayscale contrast-125 brightness-75"
+          className="w-full h-full object-cover object-center grayscale contrast-125 brightness-90"
         />
-        {/* Soft Vignette Overlay for readable text */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/25 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
       </div>
 
       {/* 2. Grid & Content Container */}
