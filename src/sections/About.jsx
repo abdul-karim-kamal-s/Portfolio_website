@@ -104,7 +104,7 @@ const About = () => {
             />
             <Card
               style={{ rotate: "25deg", top: "70%", left: "5%" }}
-              image="assets/logos/ansys.png"
+              image="assets/logos/soildworks.png"
               containerRef={grid2Container}
             />
           </div>

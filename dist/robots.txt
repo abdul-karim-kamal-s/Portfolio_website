@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mathesh-mech.vercel.app/sitemap.xml
