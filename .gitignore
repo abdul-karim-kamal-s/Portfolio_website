@@ -6,3 +6,6 @@ dist/
 .env
 .env.*
 !.env.example
+
+!/public/portfolio_terms.pdf
+!/public/privacy_policy.pdf

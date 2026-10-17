@@ -14,12 +14,7 @@ export const myProjects = [
     projectType: "Final Project",
     category: "Final Year Project",
     description:
-      "A dual-source microgrid pairing auto-tracking solar PV with vertical-axis wind turbines, regulated via an intelligent power-conditioning unit to a shared DC bus and battery storage.",
-    subDescription: [
-      "Adaptive Energy-Management: Real-time power routing balancing generation, storage state, and demand to power the station or store surplus.",
-      "Automated Battery Control: Autonomous charge sequencing that initiates on demand and cuts off at full capacity.",
-      "Dust Detection & Cleaning Rover: Sensor-triggered autonomous rover deployed for dry/wet panel cleaning upon detecting output loss.",
-    ],
+      "The system combines a solar photovoltaic subsystem with automatic tracking and multiple vertical-axis wind units, with generated energy rectified, converted, regulated and protected by an intelligent power-conditioning system before reaching a common DC bus. Excess energy is stored in a monitored rechargeable battery. An adaptive energy-management controller continuously evaluates generation, battery state and demand to supply the charging station directly, charge the battery with surplus energy, or draw on stored energy when generation is insufficient. Charging starts automatically when the battery requires energy and terminates once fully charged. Environmental sensors further support a desert-specific feature that detects abnormal photovoltaic output reduction as an indication of dust accumulation, providing a maintenance signal to activate a solar maintenance rover having a mobile drive mechanism and cleaning mechanism for automated dry or wet cleaning of the photovoltaic panels.",
     href: "https://skfb.ly/pOZDJ",
     logo: "/assets/logos/",
     image: "/assets/projects/desert.png",
@@ -171,14 +166,14 @@ export const experiences = [
     job: "Sri Krishna College of Engineering and Technology (SKCET)",
     date: "Aug 2023 – Present",
     contents: [
-      "Studying core mechanical engineering concepts including Thermodynamics, Fluid Mechanics, and Kinematics while exploring robotics, embedded systems, and automation.",
+      "Studying core mechanical engineering concepts including Thermodynamics, Fluid Mechanics, and Kinematics while exploring robotics, embedded systems and automation.",
       "Developing hands-on engineering projects that combine mechanical design, electronics, embedded control, and intelligent systems.",
       "Working with tools and technologies including Arduino, ESP-32, Embedded C, CAD, robotics, and AI/ML.",
     ],
   },
   {
     title: "Technical Project Developer / Robotics & Embedded Systems",
-    job: "Team & Interdisciplinary Projects",
+    job: "",
     date: "2025 – Present",
     contents: [
       "Designing and developing interdisciplinary prototypes that integrate mechanical components with embedded electronics and intelligent control.",
@@ -188,7 +183,7 @@ export const experiences = [
   },
   {
     title: "Independent Engineering Projects",
-    job: "Lead Developer / Researcher",
+    job: "",
     date: "2026 – Present",
     contents: [
       "Developing advanced prototypes focused on robotics, embedded intelligence, automation, and mechanical system integration.",
