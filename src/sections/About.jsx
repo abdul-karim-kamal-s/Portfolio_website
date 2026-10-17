@@ -71,7 +71,7 @@ const About = () => {
             />
             <Card
               style={{ rotate: "20deg", top: "12%", left: "36%" }}
-              text="AI & MACHINE LEARNING"
+              text="Artificial Intelligence"
               containerRef={grid2Container}
             />
             <Card

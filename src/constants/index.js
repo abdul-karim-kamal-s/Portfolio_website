@@ -40,34 +40,6 @@ export const myProjects = [
       },
     ],
   },
-  {
-    id: 2,
-    title: "Gepard Racing: Go-Kart Design and Fabrication",
-    description:
-      "Designed and developed a high-performance go-kart vehicle focused on competitive racing, recreational use, and reliable overall performance.",
-    subDescription: [
-      "Worked on the mechanical design and development of the vehicle, including the AISI 4130 alloy steel chassis, stainless-steel shafts, steering system, and braking components. ",
-      "Integrated a 149 cc R15V1S engine producing 16.58 HP and 14 N·m torque, along with a 6-speed transmission and hydraulic disc braking system. ",
-      "Contributed to the fabrication, assembly, testing, and overall development of the go-kart to achieve improved handling, durability, safety, and driving performance.",
-    ],
-    href: "",
-    logo: "/assets/projects/gepard-racing-logo.png",
-    titleLogo: "/assets/projects/gepard-racing-logo.png",
-    image: "/assets/projects/Go-Kart.jpg",
-    images: [
-      "/assets/projects/Go-Kart.jpg",
-      "/assets/projects/Go-Kart-1.jpg",
-      "/assets/projects/go-kart-chassis-design-2.jpeg",
-      "/assets/projects/go-kart-chassis-design-1.jpeg",
-    ],
-    tags: [
-      {
-        id: 1,
-        name: "Gepard Racing",
-        path: "/assets/projects/gepard-racing-logo.png",
-      },
-    ],
-  },
    {
     id: 3,
     title: "NEERVA: Smart Water Purification and Quality Monitoring System",
@@ -114,6 +86,34 @@ export const myProjects = [
         id: 1,
         name: "Ncorithm",
         path: "/assets/projects/ncorithm-logo.png",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Gepard Racing: Go-Kart Design and Fabrication",
+    description:
+      "Designed and developed a high-performance go-kart vehicle focused on competitive racing, recreational use, and reliable overall performance.",
+    subDescription: [
+      "Worked on the mechanical design and development of the vehicle, including the AISI 4130 alloy steel chassis, stainless-steel shafts, steering system, and braking components. ",
+      "Integrated a 149 cc R15V1S engine producing 16.58 HP and 14 N·m torque, along with a 6-speed transmission and hydraulic disc braking system. ",
+      "Contributed to the fabrication, assembly, testing, and overall development of the go-kart to achieve improved handling, durability, safety, and driving performance.",
+    ],
+    href: "",
+    logo: "/assets/projects/gepard-racing-logo.png",
+    titleLogo: "/assets/projects/gepard-racing-logo.png",
+    image: "/assets/projects/Go-Kart.jpg",
+    images: [
+      "/assets/projects/Go-Kart.jpg",
+      "/assets/projects/Go-Kart-1.jpg",
+      "/assets/projects/go-kart-chassis-design-2.jpeg",
+      "/assets/projects/go-kart-chassis-design-1.jpeg",
+    ],
+    tags: [
+      {
+        id: 1,
+        name: "Gepard Racing",
+        path: "/assets/projects/gepard-racing-logo.png",
       },
     ],
   },
