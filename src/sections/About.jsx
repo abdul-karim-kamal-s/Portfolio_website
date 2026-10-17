@@ -155,7 +155,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Grid 5: Tech Stack & Certifications */}
+        {/* Grid 5: Tech Stack & Experience */}
         <div className="grid-default-color grid-5 relative overflow-hidden">
           <div className="z-10 w-[50%]">
             <p className="headtext">Robotics, Embedded & CAD Stack</p>

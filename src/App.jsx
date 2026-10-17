@@ -3,7 +3,6 @@ import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
-import Credentials from "./sections/Credentials";
 import Experiences from "./sections/Experiences";
 import Testimonial from "./sections/Testimonial";
 import Contact from "./sections/Contact";
@@ -27,11 +26,6 @@ const App = () => {
       {/* 1. Projects Section MUST BE FIRST */}
       <section id="projects">
         <Projects />
-      </section>
-
-      {/* 2. Credentials Section MUST BE SECOND */}
-      <section id="credentials">
-        <Credentials />
       </section>
 
       <section id="work">

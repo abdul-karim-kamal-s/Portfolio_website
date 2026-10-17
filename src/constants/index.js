@@ -148,13 +148,8 @@ export const myProjects = [
 export const mySocials = [
   {
     name: "GitHub",
-    href: "https://github.com/Matheshs777",
+    href: "https://github.com/abdul-karim-kamal-s",
     icon: "/assets/logos/github.png",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/mathesh-s-598ab7367",
-    icon: "/assets/socials/linkedIn.svg",
   },
   {
     name: "Email",

@@ -9,7 +9,7 @@ const ProjectItemRow = ({ project, onHover, onLeave, onSelect }) => {
       className="group relative flex flex-col md:flex-row md:items-center justify-between py-7 px-6 md:px-12 border-b border-neutral-900 hover:border-neutral-700/80 hover:bg-neutral-900/10 transition-colors duration-200 cursor-pointer w-full"
     >
       <div className="flex flex-col gap-1.5 z-10 max-w-3xl">
-        <h3 className="text-xl md:text-2xl font-semibold text-neutral-100 group-hover:text-white transition-colors duration-200">
+        <h3 className="text-xl md:text-2xl font-semibold text-sky-200 transition-colors duration-200 group-hover:text-white">
           {project.title}
         </h3>
         {project.titleLogo && (
@@ -228,7 +228,7 @@ const Projects = () => {
   return (
     <section className="relative w-full py-16 text-white" id="projects">
       {/* 1. Final Year Project */}
-      <div className="w-full mb-16">
+      <div className="w-full mb-8">
         <div className="px-6 md:px-12 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
             Final Year Project
