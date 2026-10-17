@@ -176,7 +176,7 @@ export const experiences = [
     job: "",
     date: "2025 – Present",
     contents: [
-      "Designed and developing interdisciplinary prototypes that integrate mechanical components with embedded electronics and intelligent control.",
+      "Designed and developed interdisciplinary prototypes that integrate mechanical components with embedded electronics and intelligent control.",
       "Exploring practical applications of robotics, automation, renewable energy, and AI-driven engineering systems.",
       "Converting engineering concepts into functional prototypes through iterative design, fabrication, programming, and testing.",
     ],

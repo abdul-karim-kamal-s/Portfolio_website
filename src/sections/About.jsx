@@ -24,7 +24,7 @@ const About = () => {
           <div className="z-10 p-2 sm:p-4">
             <p className="headtext about-card-heading-white">Hi, I&apos;m Abdul</p>
             <p className="subtext">
-              As a B.E. Mechanical Engineering student at SKCET, I am passionate about building intelligent systems where mechanics meets electronics and robotics. I enjoy turning ideas into functional prototypes through automation, embedded systems, mechanical design, and hands-on engineering.
+              As a B.E. Mechanical Engineering student at SKCET, I am passionate about building intelligent systems where mechanics meets electronics and robotics. I enjoy turning ideas into functional prototypes through automation, embedded systems, mechanical design and hands-on engineering.
             </p>
 
             {/* Download Resume Button */}
@@ -81,7 +81,7 @@ const About = () => {
             />
             <Card
               style={{ rotate: "-45deg", top: "72%", left: "22%" }}
-              text="AUTOMATION"
+              text="AUTOCAD"
               containerRef={grid2Container}
             />
 

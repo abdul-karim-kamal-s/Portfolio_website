@@ -3,13 +3,13 @@ import { myProjects } from "../constants/index.js";
 
 const ProjectItemRow = ({ project, onHover, onLeave, onSelect }) => {
   return (
-    <div
-      onMouseEnter={() => onHover(project)}
-      onMouseLeave={onLeave}
-      className="group relative flex flex-col md:flex-row md:items-center justify-between py-7 px-6 md:px-12 border-b border-neutral-900 hover:border-neutral-700/80 hover:bg-neutral-900/10 transition-colors duration-200 cursor-pointer w-full"
-    >
+    <div className="group relative flex flex-col md:flex-row md:items-center justify-between py-7 px-6 md:px-12 border-b border-neutral-900 hover:border-neutral-700/80 hover:bg-neutral-900/10 transition-colors duration-200 w-full">
       <div className="flex flex-col gap-1.5 z-10 max-w-3xl">
-        <h3 className="text-xl md:text-2xl font-semibold text-sky-200 transition-colors duration-200 group-hover:text-white">
+        <h3
+          onMouseEnter={() => onHover(project)}
+          onMouseLeave={onLeave}
+          className="w-fit cursor-pointer text-xl md:text-2xl font-semibold text-sky-200 transition-colors duration-200 group-hover:text-white"
+        >
           {project.title}
         </h3>
         {project.titleLogo && (
