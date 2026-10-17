@@ -32,7 +32,7 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "Renewable Energy / Microgrid",
+        name: "Renewable Energy / Solar Rover",
        
       },
     ],
