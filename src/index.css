@@ -111,7 +111,15 @@ body {
 }
 
 .about-card .subtext {
+  @apply text-neutral-300;
+}
+
+.about-card .headtext {
   color: #bae6fd;
+}
+
+.about-card .headtext.about-card-heading-white {
+  color: #fff;
 }
 
 /* Navigation */

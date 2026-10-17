@@ -30,7 +30,7 @@ const ProjectItemRow = ({ project, onHover, onLeave, onSelect }) => {
           e.stopPropagation();
           onSelect(project);
         }}
-        className="flex items-center gap-2 mt-4 md:mt-0 text-sm font-medium text-sky-200 group-hover:text-sky-100 transition-colors duration-200 z-10 shrink-0"
+        className="flex items-center gap-2 mt-4 md:mt-0 text-sm font-medium text-white group-hover:text-neutral-300 transition-colors duration-200 z-10 shrink-0"
       >
         <span>Read More</span>
         <span className="transform transition-transform duration-200 group-hover:translate-x-1.5">
@@ -133,7 +133,7 @@ const ProjectModal = ({ project, onClose }) => {
             {project.title}
           </h3>
 
-          <p className="text-sm sm:text-base leading-relaxed text-sky-100">
+          <p className="text-sm sm:text-base leading-relaxed text-neutral-300">
             {project.description}
           </p>
 
@@ -142,7 +142,7 @@ const ProjectModal = ({ project, onClose }) => {
               {project.subDescription.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5">
                   <span className="text-sky-200 font-bold mt-0.5">•</span>
-                  <p className="text-xs sm:text-sm leading-relaxed text-sky-100">
+                  <p className="text-xs sm:text-sm leading-relaxed text-neutral-300">
                     {item}
                   </p>
                 </div>

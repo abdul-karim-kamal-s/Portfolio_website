@@ -22,8 +22,8 @@ const About = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#232323]/80 via-[#232323]/45 to-[#232323]/25" />
           <div className="z-10 p-2 sm:p-4">
-            <p className="headtext text-sky-200">Hi, I&apos;m Abdul</p>
-            <p className="subtext text-sky-200">
+            <p className="headtext about-card-heading-white">Hi, I&apos;m Abdul</p>
+            <p className="subtext">
               As a B.E. Mechanical Engineering student at SKCET, I am passionate about building intelligent systems where mechanics meets electronics and robotics. I enjoy turning ideas into functional prototypes through automation, embedded systems, mechanical design, and hands-on engineering.
             </p>
 
@@ -135,7 +135,7 @@ const About = () => {
         <div className="grid-black-color grid-3 about-card relative overflow-hidden">
           <div className="z-10 w-[50%]">
             <p className="headtext text-sky-200">Location & Collaboration</p>
-            <p className="subtext text-sky-200">
+            <p className="subtext">
               Based in Coimbatore, Tamil Nadu, India. Open to robotics engineering roles,
               smart automation projects and multidisciplinary research worldwide.
             </p>
@@ -146,9 +146,9 @@ const About = () => {
         </div>
 
         {/* Grid 4: Contact / CTA */}
-        <div className="grid-special-color grid-4">
+        <div className="grid-special-color grid-4 about-card">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext text-sky-200">
+            <p className="text-center headtext about-card-heading-white">
               Looking to develop intelligent systems or robotics solutions?
             </p>
             <CopyEmailButton />
@@ -159,7 +159,7 @@ const About = () => {
         <div className="grid-default-color grid-5 about-card relative overflow-hidden">
           <div className="z-10 w-[50%]">
             <p className="headtext text-sky-200">Robotics, Embedded & CAD Stack</p>
-            <p className="subtext text-sky-200">
+            <p className="subtext">
               Hands-on expertise across AutoCAD, Fusion 360, Solid Edge, ESP32 microcontrollers, autonomous control and Embodied AI. Certified Junior Robotic Program Operator with industrial training across Titan, Ashok Leyland and Maruti Suzuki Arena.
             </p>
           </div>

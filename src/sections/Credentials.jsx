@@ -1,23 +1,18 @@
 const Credentials = () => {
   const certificates = [
-    "/assets/projects/soildwoks xdesign for educadion.jpeg", 
-    "/assets/projects/Coursera cfd.jpg", 
-    "/assets/projects/solidedge.jpeg",
-    "/assets/projects/Soildworks foundation.jpeg",
-    "/assets/projects/advanced skeching soildworks.jpeg",
-    "/assets/projects/xdesign foundation.jpeg",
-    "/assets/projects/x design assembley.jpeg",
-    "/assets/projects/xdesign featues and patterns and sweeps.jpeg",
-    "/assets/projects/xdesign refernce geomentry.jpeg",
-    "/assets/projects/basics of Python.jpg",
-    "/assets/projects/coursera.jpeg",
-    "/assets/projects/nptel english language for competitive exams.jpeg",
-    "/assets/projects/introduction to front-end development.png",
-    "/assets/projects/responsivewebdesign.jpeg",
-    "/assets/projects/scientificcomputingwithpython.jpeg",
-    "/assets/projects/xdesign cut.png",
-    "/assets/projects/Getting Started with Artificial Intelligence.jpeg",
-    "/assets/projects/antidrag.jpeg",
+    { title: "DBMS Online Course", src: "/assets/certificates/dbms-online-course.pdf", preview: "/assets/certificates/previews/dbms-online-course.jpg" },
+    { title: "Organizational Behaviour", src: "/assets/certificates/organizational-behaviour.pdf", preview: "/assets/certificates/previews/organizational-behaviour.jpg" },
+    { title: "Outskill Course", src: "/assets/certificates/outskill-course.pdf", preview: "/assets/certificates/previews/outskill-course.jpg" },
+    { title: "Enhancing Soft Skills and Personality", src: "/assets/certificates/enhancing-soft-skills-and-personality.pdf", preview: "/assets/certificates/previews/enhancing-soft-skills-and-personality.jpg" },
+    { title: "Stress Management", src: "/assets/certificates/stress-management.pdf", preview: "/assets/certificates/previews/stress-management.jpg" },
+    { title: "Infosys Data Structures", src: "/assets/certificates/infosys-data-structures.pdf", preview: "/assets/certificates/previews/infosys-data-structures.jpg" },
+    { title: "Infosys Programming with Java", src: "/assets/certificates/infosys-programming-java.pdf", preview: "/assets/certificates/previews/infosys-programming-java.jpg" },
+    { title: "Skillathon Course", src: "/assets/certificates/skillathon-course.pdf", preview: "/assets/certificates/previews/skillathon-course.jpg" },
+    { title: "Infosys TechA Python", src: "/assets/certificates/infosys-techa-python.pdf", preview: "/assets/certificates/previews/infosys-techa-python.jpg" },
+    { title: "Infosys Python Basics", src: "/assets/certificates/infosys-python-basics.pdf", preview: "/assets/certificates/previews/infosys-python-basics.jpg" },
+    { title: "Cisso Cyber-Security", src: "/assets/certificates/cisso-cyber-security.pdf", preview: "/assets/certificates/previews/cisso-cyber-security.jpg" },
+    { title: "Infosys C++ Course", src: "/assets/certificates/infosys-cpp-course.pdf", preview: "/assets/certificates/previews/infosys-cpp-course.jpg" },
+    { title: "Nestlé Resilience Course (date unavailable)", src: "/assets/certificates/nestle-resilience-course.pdf", preview: "/assets/certificates/previews/nestle-resilience-course.jpg" },
   ];
 
   const achievements = [
@@ -31,7 +26,7 @@ const Credentials = () => {
   ];
 
   // Reusable grid layout for the sections
-  const ImageGrid = ({ title, images }) => (
+  const renderImageGrid = (title, images) => (
     <div className="mb-20">
       <h2 className="text-white font-bold text-3xl text-center mb-10 tracking-wide">
         {title}
@@ -56,11 +51,38 @@ const Credentials = () => {
     </div>
   );
 
+  const renderCertificateGrid = (certificates) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+      {certificates.map((certificate) => (
+        <a
+          key={certificate.src}
+          href={certificate.src}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Open ${certificate.title} certificate PDF`}
+          className="block overflow-hidden rounded-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-black-200 group"
+        >
+          <img
+            src={certificate.preview}
+            alt={certificate.title}
+            loading="lazy"
+            className="aspect-[4/3] w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
+          />
+        </a>
+      ))}
+    </div>
+  );
+
   return (
     <section className="max-w-7xl mx-auto py-20" id="credentials">
-      <ImageGrid title="Certifications" images={certificates} />
-      <ImageGrid title="Achievements" images={achievements} />
-      <ImageGrid title="Internship Experience" images={internships} />
+      <div className="mb-20">
+        <h2 className="text-white font-bold text-3xl text-center mb-10 tracking-wide">
+          Certifications
+        </h2>
+        {renderCertificateGrid(certificates)}
+      </div>
+      {renderImageGrid("Achievements", achievements)}
+      {renderImageGrid("Internship Experience", internships)}
     </section>
   );
 };
