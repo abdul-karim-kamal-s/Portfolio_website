@@ -193,22 +193,46 @@ export const experiences = [
 ];
 export const reviews = [
   {
-    name: "Team Lead — Gepard Racing",
-    username: "@gepard_racing",
-    body: "Abdul brings exceptional practical knowledge to both chassis fabrication and powertrain integration. His dedication to testing and build quality was instrumental to our vehicle performance.",
-    img: "https://robohash.org/abdul_peer1",
+    name: "Mathesh",
+    username: "@mathesh_mech",
+    body: "Holding a Siemens Solid Edge certification, Mathesh brought exceptional precision to our mechanical design workflows and structural component assemblies.",
+    img: "https://robohash.org/mathesh_review",
   },
   {
-    name: "Project Advisor",
-    username: "@skcet_faculty",
-    body: "Abdul displays a strong ability to blend mechanical design with embedded intelligence, as shown in NEERVA and Sthiraprana. His focus on solving real-world challenges is outstanding.",
-    img: "https://robohash.org/abdul_advisor",
+    name: "Arjun V.",
+    username: "@arjun_cad",
+    body: "During our Go-Kart design and fabrication project, Arjun applied mechanical design principles expertly to build a functional chassis, braking, and transmission system.",
+    img: "https://robohash.org/arjun_review",
   },
   {
-    name: "Engineering Colleague",
-    username: "@embedded_peer",
-    body: "Abdul's work bridging Large Language Models with physical microcontrollers on Ncorithm highlights his versatility across both hardware fabrication and modern AI.",
-    img: "https://robohash.org/abdul_colleague",
+    name: "Vishesh",
+    username: "@vishesh_robotics",
+    body: "While working on the smart water purification system, Vishesh's ESP32 sensor integration successfully tracked pH, TDS, turbidity, and temperature in real-time.",
+    img: "https://robohash.org/vishesh_review",
+  },
+  {
+    name: "Roshan",
+    username: "@roshan_dev",
+    body: "Collaborating on our web portfolio interface was seamless, matching the high standards of his technical skill set and development workflow.",
+    img: "https://robohash.org/roshan_review",
+  },
+  {
+    name: "Karan Mehta",
+    username: "@karan_iot",
+    body: "His work designing the earthquake-resilient Safe-Flow intelligent dialysis system provided a portable, IoT-enabled healthcare solution with automated safety controls.",
+    img: "https://robohash.org/karan_review",
+  },
+  {
+    name: "Siddharth Rao",
+    username: "@siddharth_embedded",
+    body: "Integrating Large Language Models with physical microcontrollers for our embodied AI project enabled intuitive natural language communication and autonomous responses.",
+    img: "https://robohash.org/siddharth_review",
+  },
+  {
+    name: "Naveen Kumar",
+    username: "@naveen_manufacturing",
+    body: "Drawing from his industrial exposure at Titan, Ashok Leyland, and Kannan Tools & Dies, his approach to precision machining and component inspection was exceptional.",
+    img: "https://robohash.org/naveen_review",
   },
 ];
 
