@@ -31,7 +31,7 @@ const Credentials = () => {
       <h2 className="text-white font-bold text-3xl text-center mb-10 tracking-wide">
         {title}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-4">
         {images.map((src, index) => (
           <div 
             key={index} 
@@ -52,7 +52,7 @@ const Credentials = () => {
   );
 
   const renderCertificateGrid = (certificates) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-4">
       {certificates.map((certificate) => (
         <a
           key={certificate.src}
@@ -66,7 +66,9 @@ const Credentials = () => {
             src={certificate.preview}
             alt={certificate.title}
             loading="lazy"
-            className="aspect-[4/3] w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
+            className={`aspect-[4/3] w-full ${
+              certificate.title === "Cisso Cyber-Security" ? "object-cover" : "object-contain"
+            } transition-transform duration-500 ease-in-out group-hover:scale-105`}
           />
         </a>
       ))}
@@ -74,7 +76,7 @@ const Credentials = () => {
   );
 
   return (
-    <section className="max-w-7xl mx-auto py-20" id="credentials">
+    <section className="w-full py-20" id="credentials">
       <div className="mb-20">
         <h2 className="text-white font-bold text-3xl text-center mb-10 tracking-wide">
           Certifications

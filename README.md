@@ -62,3 +62,10 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 │   └── main.jsx            # Entry point
 ├── tailwind.config.js      # Tailwind configuration
 └── vite.config.js          # Vite configuration
+```
+
+## EmailJS Contact Form Setup
+
+Copy `.env.example` to `.env` and set `VITE_EMAILJS_PUBLIC_KEY` to the public key from your EmailJS account. The service and template IDs are already configured in `.env.example`. Restart the Vite server after changing environment variables.
+
+The EmailJS public key is used by the browser and is not a private secret. Never put an EmailJS private key in a `VITE_` variable or commit `.env`; only the example file is tracked.

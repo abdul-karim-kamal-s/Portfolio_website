@@ -32,24 +32,41 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      console.log("Form submitted:", formData);
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          "EmailJS configuration is incomplete. Set the service ID, template ID, and VITE_EMAILJS_PUBLIC_KEY in .env, then restart Vite."
+        );
+      }
+
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey
       );
-      setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
       showAlertMessage("success", "Your message has been sent!");
     } catch (error) {
+      console.error("EmailJS contact form submission failed:", error);
+      const configurationError =
+        error instanceof Error &&
+        error.message.startsWith("EmailJS configuration is incomplete");
+      showAlertMessage(
+        "danger",
+        configurationError
+          ? error.message
+          : "Your message could not be sent. Please try again later."
+      );
+    } finally {
       setIsLoading(false);
-      console.log(error);
-      showAlertMessage("danger", "Something went wrong!");
     }
   };
 
@@ -65,9 +82,9 @@ const Contact = () => {
       {showAlert && <Alert type={alertType} text={alertMessage} />}
       <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
         <div className="flex flex-col items-start w-full gap-5 mb-10">
-          <h2 className="text-heading">Let's Talk</h2>
+          <h2 className="text-heading">Let&apos;s Talk</h2>
           <p className="font-normal text-neutral-300">
-            Whether you're looking to collaborate on mechanical design, CAD modeling, FEA/CFD simulations, or engineering projects, I'm here to help.
+            Whether you&apos;re looking to collaborate on mechanical design, CAD modeling, FEA/CFD simulations, or engineering projects, I&apos;m here to help.
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>

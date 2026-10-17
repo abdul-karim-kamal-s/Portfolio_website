@@ -2,3 +2,7 @@
 dist/
 
 *.pdf
+
+.env
+.env.*
+!.env.example
