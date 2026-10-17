@@ -72,24 +72,24 @@ const Credentials = () => {
           preview: "/assets/certificates/previews/cisso-cyber-security.jpg",
         },
         {
+          title: "UiPath Automation Explorer for Students",
+          src: "/assets/certificates/skillathon-course.pdf",
+          preview: "/assets/certificates/previews/skillathon-course.jpg",
+        },
+         {
+          title: "Junior Robot Operator and Programmer",
+          src: "/assets/certificates/junior-robot-operator-programmer.pdf",
+          type: "pdf",
+          orientation: "portrait",
+        },
+        {
           title: "MySQL DBMS",
           src: "/assets/certificates/dbms-online-course.pdf",
           preview: "/assets/certificates/previews/dbms-online-course.jpg",
         },
         {
-          title: "UiPath Automation Explorer for Students",
-          src: "/assets/certificates/skillathon-course.pdf",
-          preview: "/assets/certificates/previews/skillathon-course.jpg",
-        },
-        {
           title: "Solid Edge Associate Level CAD Certification",
           src: "/assets/certificates/solid-edge-associate-cad.pdf",
-          type: "pdf",
-          orientation: "portrait",
-        },
-        {
-          title: "Junior Robot Operator and Programmer",
-          src: "/assets/certificates/junior-robot-operator-programmer.pdf",
           type: "pdf",
           orientation: "portrait",
         },
@@ -257,12 +257,8 @@ const Credentials = () => {
     );
   };
 
-  const renderCertificateGrid = (certificates, isTechnicalCategory) => (
-    <div
-      className={`mx-auto grid max-w-7xl grid-cols-1 items-start justify-items-center px-3 sm:grid-cols-2 ${
-        isTechnicalCategory ? "gap-2" : "gap-4"
-      }`}
-    >
+  const renderCertificateGrid = (certificates) => (
+    <div className="mx-auto grid max-w-7xl grid-cols-1 items-start justify-items-center gap-4 px-3 sm:grid-cols-2">
       {certificates.map((certificate) => (
         <a
           key={certificate.src}
@@ -272,11 +268,7 @@ const Credentials = () => {
           aria-label={`Open ${certificate.title} certificate PDF`}
           className="block w-full overflow-hidden rounded-xl bg-black-200 group"
         >
-          <div
-            className={`relative w-full overflow-hidden ${
-              certificate.orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"
-            }`}
-          >
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
             {certificate.type === "pdf" ? (
               <iframe
                 src={`${certificate.src}#view=Fit&toolbar=0&navpanes=0&scrollbar=0`}
@@ -308,10 +300,7 @@ const Credentials = () => {
             <h3 className="mb-8 px-4 text-center text-2xl font-bold tracking-wide text-sky-200 sm:text-3xl">
               {category.title}
             </h3>
-            {renderCertificateGrid(
-              category.certificates,
-              category.title === "Technical & Skill Development",
-            )}
+            {renderCertificateGrid(category.certificates)}
           </div>
         ))}
       </div>
