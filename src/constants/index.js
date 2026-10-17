@@ -1,58 +1,108 @@
+const neervaImages = [
+  "/assets/projects/neerva-logo.png",
+  "/assets/projects/neerva-1.jpg",
+  "/assets/projects/neerva-2.jpg",
+  "/assets/projects/neerva-3.jpg",
+  "/assets/projects/neerva-4.jpg",
+  "/assets/projects/neerva-5.jpg",
+];
+
 export const myProjects = [
   {
-    id: 1,
-    title: "AYASK: Intelligent Conveyor Health Monitoring",
+   id: 1,
+    title:
+      "Hybrid Solar-Wind Harvesting, Intelligent Solar Maintenance Rover & Smart Charging Station for Desert Applications",
+    projectType: "Final Project",
+    category: "Final Year Project",
     description:
-      "An AI predictive maintenance solution for mining conveyors, combining machine vision, IoT telemetry, and a digital twin to detect anomalies before failure.",
+      "A dual-source microgrid pairing auto-tracking solar PV with vertical-axis wind turbines, regulated via an intelligent power-conditioning unit to a shared DC bus and battery storage.",
     subDescription: [
-      "Visual Anomaly Detection: PatchCore (ResNet-18) identifies belt tears and surface wear.",
-      "Edge Monitoring: Continuous tracking via vibration, acoustic, and thermal sensors.",
-      "Digital Twin: Real-time 3D dashboard for defect localization and alerts.",
+      "Adaptive Energy-Management: Real-time power routing balancing generation, storage state, and demand to power the station or store surplus.",
+      "Automated Battery Control: Autonomous charge sequencing that initiates on demand and cuts off at full capacity.",
+      "Dust Detection & Cleaning Rover: Sensor-triggered autonomous rover deployed for dry/wet panel cleaning upon detecting output loss.",
     ],
-    href: "https://ayask.vercel.app",
-    logo: "/assets/logos/python.png",
-    image: "/assets/projects/ayask.png",
+    href: "https://skfb.ly/pOYuQhttps://sketchfab.com/3d-models/station-fb45b4ae8f3841249f918fe476397c1e",
+    logo: "/assets/logos/esp32.png",
+    image: "/assets/projects/desert.png",
+    images: [
+      "/assets/projects/desert.png",
+       "/assets/projects/desert-rover-chassis.jpeg",
+      "/assets/projects/desert-solar-panels.jpeg",
+      "/assets/projects/desert-charging-station.jpeg",
+      "/assets/projects/desert-ev-charging-points.jpeg",
+      "/assets/projects/desert-wind-turbines.jpeg",
+      "/assets/projects/desert-wind-turbine-detail.jpeg",
+    ],
     tags: [
       {
         id: 1,
-        name: "Python / Jetson",
-        path: "/assets/logos/Python-logo.svg",
+        name: "Renewable Energy / Microgrid",
+        path: "",
       },
     ],
   },
   {
     id: 2,
-    title: "Omni-Node: AI-Driven Retrofit Ecosystem",
+    title: "Gepard Racing: Go-Kart Design and Fabrication",
     description:
-      "An edge-AI hardware solution designed to retrofit legacy CNC machinery, bringing HMLV (High-Mix Low-Volume) manufacturing flexibility to existing infrastructure.",
+      "Designed and developed a high-performance go-kart vehicle focused on competitive racing, recreational use, and reliable overall performance.",
     subDescription: [
-      "Designed hardware architecture integrating an NVIDIA Jetson Orin Nano, ESP32 microcontrollers, and MPU6050 sensors.",
-      "Developed comprehensive system block diagrams, unit economics, and hardware BOM documentation.",
-      "Formulated a Master Jury Dossier and Business Proposal for the MSME Idea Hackathon 6.0.",
+      "Worked on the mechanical design and development of the vehicle, including the AISI 4130 alloy steel chassis, stainless-steel shafts, steering system, and braking components. ",
+      "Integrated a 149 cc R15V1S engine producing 16.58 HP and 14 N·m torque, along with a 6-speed transmission and hydraulic disc braking system. ",
+      "Contributed to the fabrication, assembly, testing, and overall development of the go-kart to achieve improved handling, durability, safety, and driving performance.",
     ],
-    href: "https://omni-node-dashboard.vercel.app",
-    logo: "/assets/logos/Nvdia.png",
-    image: "/assets/projects/omninode.png",
+    href: "",
+    logo: "/assets/projects/gepard-racing-logo.png",
+    titleLogo: "/assets/projects/gepard-racing-logo.png",
+    image: "/assets/projects/Go-Kart.jpg",
+    images: [
+      "/assets/projects/Go-Kart.jpg",
+      "/assets/projects/Go-Kart-1.jpg",
+      "/assets/projects/go-kart-chassis-design-2.jpeg",
+      "/assets/projects/go-kart-chassis-design-1.jpeg",
+    ],
     tags: [
       {
         id: 1,
-        name: "Edge AI / IoT",
-        path: "/assets/logos/Nvdia.png",
+        name: "Gepard Racing",
+        path: "/assets/projects/gepard-racing-logo.png",
+      },
+    ],
+  },
+   {
+    id: 3,
+    title: "NEERVA: Smart Water Purification and Quality Monitoring System",
+    description:
+      "•	Designed and developed a portable smart water purification system for mining-affected regions, integrating pH, TDS, turbidity, and temperature sensors with multi-stage purification and sensor-driven adaptive treatment.",
+    subDescription: [
+      "Implemented dual-stage water-quality verification to analyze raw and treated water, automatically activate required purification stages based on contamination levels, and detect unsafe output conditions.",
+      "Integrated a centralized IoT dashboard and Digital Water Passport to track water quality, treatment history, purification efficiency, filter health, and pollution events for remote monitoring. ",
+      "Implemented predictive filter-life intelligence and smart leak-detection alerts to monitor filter performance, estimate maintenance requirements, identify potential failures, and support timely intervention.",
+    ],
+    href: "",
+    logo: "/assets/projects/neerva-logo.png",
+    image: "/assets/projects/neerva-logo.png",
+    images: neervaImages,
+    tags: [
+      {
+        id: 1,
+        name: "NEERVA",
+        path: "/assets/projects/neerva-logo.png",
       },
     ],
   },
   {
-    id: 3,
-    title: "Tarang: Autonomous Ocean Observation Platform",
+    id: 4,
+    title: "Ncorithm: Large Language Model (LLM) – Integration for Embodied AI",
     description:
-      "A low-cost, autonomous ocean observation buoy designed for continuous monitoring of remote marine environments using renewable energy and intelligent sensor fusion.",
+      "Developed an embodied AI system integrating a Large Language Model (LLM) with embedded devices to enable natural voice-based interaction and control.",
     subDescription: [
-      "Hybrid Power Management: Harvests solar and wave energy with smart distribution to modules.",
-      "Self-Righting Mechanism: Active pump and ballast system for automated capsize recovery.",
-      "Sensor Fusion: Integrates GNSS, 10-DOF IMU, and sensors for temperature and salinity tracking.",
+      "The system captures user voice commands through a microphone and interprets them using the LLM, converting simple spoken instructions into suitable embedded operations.",
+      "Integrated a microcontroller, wireless communication, and AI processing framework to transmit commands and control connected devices based on the user’s requirements.",
+      "•	Implemented MCP for device communication and task execution, demonstrating how conversational AI can simplify interaction with embedded systems without requiring users to manually write code.",
     ],
-    href: "https://github.com/Matheshs777/Tarang", 
-    logo: "/assets/logos/esp32.png", 
+    href: "https://drive.google.com/file/d/1J2YeTPgPagysvkVPHvX4GNWtq60K6PrN/view?usp=drivesdk",
+    logo: "/assets/logos/esp32.png",
     image: "/assets/projects/tarang.png",
     tags: [
       {
@@ -64,23 +114,23 @@ export const myProjects = [
   },
   {
     id: 4,
-    title: "4-Cylinder Engine Assembly",
+    title: "NEERVA: Smart Water Purification and Quality Monitoring System",
     description:
-      "3D parametric modeling, component mating, and dynamic motion analysis of an internal combustion engine.",
+      "•	Designed and developed a portable smart water purification system for mining-affected regions, integrating pH, TDS, turbidity, and temperature sensors with multi-stage purification and sensor-driven adaptive treatment.",
     subDescription: [
-      "Built in SolidWorks with strict engineering tolerances and interference checks.",
-      "Performed detailed kinematic motion analysis and simulation.",
-      "Designed with a focus on structural dynamic evaluation and performance.",
-      "Exported for web visualization using interactive 3D embeds.",
+      "Implemented dual-stage water-quality verification to analyze raw and treated water, automatically activate required purification stages based on contamination levels, and detect unsafe output conditions.",
+      "Integrated a centralized IoT dashboard and Digital Water Passport to track water quality, treatment history, purification efficiency, filter health, and pollution events for remote monitoring. ",
+      "Implemented predictive filter-life intelligence and smart leak-detection alerts to monitor filter performance, estimate maintenance requirements, identify potential failures, and support timely intervention.",
     ],
     href: "https://sketchfab.com/models/fbd95c7cf51b488db89ce65d18d4b11f/embed",
-    logo: "/assets/logos/soildworks.png",
-    image: "/assets/projects/engine.png",
+    logo: "/assets/projects/neerva-logo.png",
+    image: "/assets/projects/neerva-logo.png",
+    images: neervaImages,
     tags: [
       {
         id: 1,
-        name: "SolidWorks",
-        path: "/assets/logos/soildworks.png",
+        name: "NEERVA",
+        path: "/assets/projects/neerva-logo.png",
       },
     ],
   },
@@ -314,15 +364,15 @@ export const reviews = [
     username: "@cad_expert",
     body: "The engine assembly model shows great proficiency with parametric constraints and interference checks. Brilliant execution.",
     img: "https://robohash.org/cad_expert",
-  },
+  }, 
 ];
 
 export const navLinks = [
-  { id: 1, name: 'Home', href: '#home' },
-  { id: 2, name: 'About', href: '#about' },
-  { id: 3, name: 'Work', href: '#work' },
-  { id: 4, name: 'Contact', href: '#contact' },
+  { id: 1, name: "Home", href: "#home" },
+  { id: 2, name: "About", href: "#about" },
+  { id: 3, name: "Work", href: "#work" },
+  { id: 4, name: "Contact", href: "#contact" },
 ];
 
-export const clientReviews = reviews; 
+export const clientReviews = reviews;
 export const workExperiences = experiences;
