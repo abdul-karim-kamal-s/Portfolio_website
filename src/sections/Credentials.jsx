@@ -3,15 +3,15 @@ const Credentials = () => {
     {
       title: "Infosys Springboard",
       certificates: [
-          {
-          title: "TechA Python Developer Certification",
-          src: "/assets/certificates/infosys-techa-python.pdf",
-          preview: "/assets/certificates/previews/infosys-techa-python.jpg",
-        },
          {
           title: "Basics of Python",
           src: "/assets/certificates/infosys-python-basics.pdf",
           preview: "/assets/certificates/previews/infosys-python-basics.jpg",
+        },
+         {
+          title: "TechA Python Developer Certification",
+          src: "/assets/certificates/infosys-techa-python.pdf",
+          preview: "/assets/certificates/previews/infosys-techa-python.jpg",
         },
         {
           title: "Data Structures and Algorithms using Java",
@@ -65,6 +65,12 @@ const Credentials = () => {
           src: "/assets/certificates/outskill-course.pdf",
           preview: "/assets/certificates/previews/outskill-course.jpg",
         },
+         {
+          title: "Cybersecurity Course",
+          details: "Cisco · 2024",
+          src: "/assets/certificates/cisso-cyber-security.pdf",
+          preview: "/assets/certificates/previews/cisso-cyber-security.jpg",
+        },
         {
           title: "MySQL DBMS",
           src: "/assets/certificates/dbms-online-course.pdf",
@@ -76,20 +82,14 @@ const Credentials = () => {
           preview: "/assets/certificates/previews/skillathon-course.jpg",
         },
         {
-          title: "Cybersecurity Course",
-          details: "Cisco · 2024",
-          src: "/assets/certificates/cisso-cyber-security.pdf",
-          preview: "/assets/certificates/previews/cisso-cyber-security.jpg",
-        },
-        {
-          title: "Junior Robot Operator and Programmer",
-          src: "/assets/certificates/junior-robot-operator-programmer.pdf",
+          title: "Solid Edge Associate Level CAD Certification",
+          src: "/assets/certificates/solid-edge-associate-cad.pdf",
           type: "pdf",
           orientation: "portrait",
         },
         {
-          title: "Solid Edge Associate Level CAD Certification",
-          src: "/assets/certificates/solid-edge-associate-cad.pdf",
+          title: "Junior Robot Operator and Programmer",
+          src: "/assets/certificates/junior-robot-operator-programmer.pdf",
           type: "pdf",
           orientation: "portrait",
         },
@@ -257,8 +257,12 @@ const Credentials = () => {
     );
   };
 
-  const renderCertificateGrid = (certificates) => (
-    <div className="mx-auto grid max-w-7xl grid-cols-1 items-start justify-items-center gap-4 px-3 sm:grid-cols-2">
+  const renderCertificateGrid = (certificates, isTechnicalCategory) => (
+    <div
+      className={`mx-auto grid max-w-7xl grid-cols-1 items-start justify-items-center px-3 sm:grid-cols-2 ${
+        isTechnicalCategory ? "gap-2" : "gap-4"
+      }`}
+    >
       {certificates.map((certificate) => (
         <a
           key={certificate.src}
@@ -304,7 +308,10 @@ const Credentials = () => {
             <h3 className="mb-8 px-4 text-center text-2xl font-bold tracking-wide text-sky-200 sm:text-3xl">
               {category.title}
             </h3>
-            {renderCertificateGrid(category.certificates)}
+            {renderCertificateGrid(
+              category.certificates,
+              category.title === "Technical & Skill Development",
+            )}
           </div>
         ))}
       </div>
