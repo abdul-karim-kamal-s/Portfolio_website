@@ -84,7 +84,7 @@ const Contact = () => {
         <div className="flex flex-col items-start w-full gap-5 mb-10">
           <h2 className="text-heading">Let&apos;s Talk</h2>
           <p className="font-normal text-neutral-300">
-            Whether you&apos;re looking to collaborate on mechanical design, CAD modeling, FEA/CFD simulations, or engineering projects, I&apos;m here to help.
+          Whether you're looking to collaborate on mechanical design, CAD modeling, robotics, embedded systems, or AI-integrated engineering projects, I'm here to help.
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>

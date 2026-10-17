@@ -173,6 +173,16 @@ const Credentials = () => {
       title: "Ashok Leyland Internship Certificate",
       type: "image",
     },
+     {
+      src: "/assets/projects/maruti-suzuki-internship.jpg",
+      title: "Maruti Suzuki Internship Certificate",
+      type: "image",
+    },
+     {
+      src: "/assets/projects/kannan-tools-and-dies-internship.jpg",
+      title: "Kannan Tools and Dies Internship Certificate",
+      type: "image",
+    },
     {
       src: "/assets/projects/ottajees-engineering-internship.jpg",
       title: "Ottajees Engineering Internship Certificate",
@@ -183,16 +193,7 @@ const Credentials = () => {
       title: "Titan Company Internship Certificate",
       type: "image",
     },
-    {
-      src: "/assets/projects/maruti-suzuki-internship.jpg",
-      title: "Maruti Suzuki Internship Certificate",
-      type: "image",
-    },
-    {
-      src: "/assets/projects/kannan-tools-and-dies-internship.jpg",
-      title: "Kannan Tools and Dies Internship Certificate",
-      type: "image",
-    },
+
   ];
 
   // Reusable grid layout for the sections
