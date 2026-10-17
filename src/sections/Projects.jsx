@@ -30,7 +30,7 @@ const ProjectItemRow = ({ project, onHover, onLeave, onSelect }) => {
           e.stopPropagation();
           onSelect(project);
         }}
-        className="flex items-center gap-2 mt-4 md:mt-0 text-sm font-medium text-neutral-300 group-hover:text-white transition-colors duration-200 z-10 shrink-0"
+        className="flex items-center gap-2 mt-4 md:mt-0 text-sm font-medium text-sky-200 group-hover:text-sky-100 transition-colors duration-200 z-10 shrink-0"
       >
         <span>Read More</span>
         <span className="transform transition-transform duration-200 group-hover:translate-x-1.5">
@@ -129,11 +129,11 @@ const ProjectModal = ({ project, onClose }) => {
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 md:p-10 flex flex-col gap-5">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+          <h3 className="text-2xl sm:text-3xl font-bold text-sky-200 tracking-tight leading-snug">
             {project.title}
           </h3>
 
-          <p className="text-sm sm:text-base leading-relaxed text-neutral-300">
+          <p className="text-sm sm:text-base leading-relaxed text-sky-100">
             {project.description}
           </p>
 
@@ -141,8 +141,8 @@ const ProjectModal = ({ project, onClose }) => {
             <div className="space-y-2.5 mt-1">
               {project.subDescription.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5">
-                  <span className="text-amber-500 font-bold mt-0.5">•</span>
-                  <p className="text-xs sm:text-sm leading-relaxed text-neutral-400">
+                  <span className="text-sky-200 font-bold mt-0.5">•</span>
+                  <p className="text-xs sm:text-sm leading-relaxed text-sky-100">
                     {item}
                   </p>
                 </div>
@@ -165,7 +165,7 @@ const ProjectModal = ({ project, onClose }) => {
                   className="w-7 h-7 object-contain"
                 />
               ) : null}
-              <span className="text-xs font-mono text-neutral-400">
+              <span className="text-xs font-mono text-sky-200">
                 {project.tags?.[0]?.name || project.category}
               </span>
             </div>
@@ -175,7 +175,7 @@ const ProjectModal = ({ project, onClose }) => {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-sky-200 hover:text-sky-100 transition-colors"
               >
                 <span>View Project</span>
                 <span className="text-xs">↗</span>

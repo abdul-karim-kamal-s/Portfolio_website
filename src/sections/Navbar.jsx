@@ -20,6 +20,11 @@ function Navigation({ onClick }) {
         </a>
       </li>
       <li className="nav-li">
+        <a className="nav-link text-sm font-medium tracking-wide text-neutral-300 transition-colors hover:text-white" href="#credentials" onClick={onClick}>
+          Credentials
+        </a>
+      </li>
+      <li className="nav-li">
         <a className="nav-link text-sm font-medium tracking-wide text-neutral-300 transition-colors hover:text-white" href="#contact" onClick={onClick}>
           Contact
         </a>
