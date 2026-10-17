@@ -1,5 +1,4 @@
 const neervaImages = [
-  "/assets/projects/neerva-logo.png",
   "/assets/projects/neerva-1.jpg",
   "/assets/projects/neerva-2.jpg",
   "/assets/projects/neerva-3.jpg",
@@ -81,7 +80,8 @@ export const myProjects = [
     ],
     href: "",
     logo: "/assets/projects/neerva-logo.png",
-    image: "/assets/projects/neerva-logo.png",
+    titleLogo: "/assets/projects/neerva-logo.png",
+    image: "/assets/projects/neerva-1.jpg",
     images: neervaImages,
     tags: [
       {
@@ -109,28 +109,6 @@ export const myProjects = [
         id: 1,
         name: "ESP32 / C++",
         path: "/assets/logos/esp32.png",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "NEERVA: Smart Water Purification and Quality Monitoring System",
-    description:
-      "•	Designed and developed a portable smart water purification system for mining-affected regions, integrating pH, TDS, turbidity, and temperature sensors with multi-stage purification and sensor-driven adaptive treatment.",
-    subDescription: [
-      "Implemented dual-stage water-quality verification to analyze raw and treated water, automatically activate required purification stages based on contamination levels, and detect unsafe output conditions.",
-      "Integrated a centralized IoT dashboard and Digital Water Passport to track water quality, treatment history, purification efficiency, filter health, and pollution events for remote monitoring. ",
-      "Implemented predictive filter-life intelligence and smart leak-detection alerts to monitor filter performance, estimate maintenance requirements, identify potential failures, and support timely intervention.",
-    ],
-    href: "https://sketchfab.com/models/fbd95c7cf51b488db89ce65d18d4b11f/embed",
-    logo: "/assets/projects/neerva-logo.png",
-    image: "/assets/projects/neerva-logo.png",
-    images: neervaImages,
-    tags: [
-      {
-        id: 1,
-        name: "NEERVA",
-        path: "/assets/projects/neerva-logo.png",
       },
     ],
   },

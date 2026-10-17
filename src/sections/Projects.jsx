@@ -75,10 +75,10 @@ const ProjectModal = ({ project, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border border-neutral-800 bg-[#0c0f1d] shadow-2xl flex flex-col text-left"
+        className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl border border-neutral-800 bg-[#0c0f1d] shadow-2xl flex flex-col text-left"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative flex h-64 w-full items-center justify-center overflow-hidden bg-neutral-300 sm:h-72 md:h-[280px]">
+        <div className="relative flex h-[min(60vh,560px)] w-full shrink-0 items-center justify-center overflow-hidden bg-neutral-300">
           <button
             onClick={onClose}
             type="button"
