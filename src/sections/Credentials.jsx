@@ -3,7 +3,16 @@ const Credentials = () => {
     {
       title: "Infosys Springboard",
       certificates: [
-        
+          {
+          title: "TechA Python Developer Certification",
+          src: "/assets/certificates/infosys-techa-python.pdf",
+          preview: "/assets/certificates/previews/infosys-techa-python.jpg",
+        },
+         {
+          title: "Basics of Python",
+          src: "/assets/certificates/infosys-python-basics.pdf",
+          preview: "/assets/certificates/previews/infosys-python-basics.jpg",
+        },
         {
           title: "Data Structures and Algorithms using Java",
           src: "/assets/certificates/infosys-data-structures.pdf",
@@ -19,7 +28,7 @@ const Credentials = () => {
           src: "/assets/certificates/infosys-cpp-course.pdf",
           preview: "/assets/certificates/previews/infosys-cpp-course.jpg",
         },
-        
+       
       ],
     },
     {
@@ -71,6 +80,24 @@ const Credentials = () => {
           details: "Cisco · 2024",
           src: "/assets/certificates/cisso-cyber-security.pdf",
           preview: "/assets/certificates/previews/cisso-cyber-security.jpg",
+        },
+        {
+          title: "Junior Robot Operator and Programmer",
+          src: "/assets/certificates/junior-robot-operator-programmer.pdf",
+          type: "pdf",
+          orientation: "portrait",
+        },
+        {
+          title: "Solid Edge Associate Level CAD Certification",
+          src: "/assets/certificates/solid-edge-associate-cad.pdf",
+          type: "pdf",
+          orientation: "portrait",
+        },
+        {
+          title: "National IPR Training Program",
+          src: "/assets/certificates/national-ipr-training-program.pdf",
+          type: "pdf",
+          orientation: "portrait",
         },
       ],
     },
@@ -241,13 +268,25 @@ const Credentials = () => {
           aria-label={`Open ${certificate.title} certificate PDF`}
           className="block w-full overflow-hidden rounded-xl bg-black-200 group"
         >
-          <div className="relative aspect-[4/3] w-full overflow-hidden">
-            <img
-              src={certificate.preview}
-              alt=""
-              loading="lazy"
-              className="h-full w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[1.02]"
-            />
+          <div
+            className={`relative w-full overflow-hidden ${
+              certificate.orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"
+            }`}
+          >
+            {certificate.type === "pdf" ? (
+              <iframe
+                src={`${certificate.src}#view=Fit&toolbar=0&navpanes=0&scrollbar=0`}
+                title={certificate.title}
+                className="pointer-events-none h-full w-full border-0"
+              />
+            ) : (
+              <img
+                src={certificate.preview}
+                alt=""
+                loading="lazy"
+                className="h-full w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[1.02]"
+              />
+            )}
           </div>
         </a>
       ))}
