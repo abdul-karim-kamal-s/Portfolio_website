@@ -143,6 +143,7 @@ const Credentials = () => {
       src: "/assets/projects/isnee-motorsports-certificate.pdf",
       title: "ISNEE Motorsports Certificate",
       type: "pdf",
+      orientation: "portrait",
     },
     {
       src: "/assets/projects/tnkc-certificate.pdf",
@@ -181,25 +182,20 @@ const Credentials = () => {
                 <iframe
                   src={`${achievement.src}#view=Fit&toolbar=0&navpanes=0&scrollbar=0`}
                   title={achievement.title}
-                  className="pointer-events-none aspect-[4/3] w-full border-0"
+                  className={`pointer-events-none w-full border-0 ${
+                    achievement.orientation === "portrait" ? "aspect-[7/10]" : "aspect-[4/3]"
+                  }`}
                 />
               ) : (
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-950">
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 scale-110 bg-cover bg-center opacity-80 blur-md"
-                    style={{ backgroundImage: `url("${achievement.src}")` }}
-                  />
-                  <img
-                    src={achievement.src}
-                    alt={achievement.title}
-                    loading="lazy"
-                    className="relative h-full w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                  />
-                </div>
+                <img
+                  src={achievement.src}
+                  alt={achievement.title}
+                  loading="lazy"
+                  className="h-auto w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[1.02]"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
               )}
             </a>
           );
@@ -219,20 +215,13 @@ const Credentials = () => {
           aria-label={`Open ${certificate.title} certificate PDF`}
           className="block w-full max-w-md overflow-hidden rounded-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-black-200 group"
         >
-          <div className="relative aspect-[4/3] overflow-hidden bg-neutral-950">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 scale-110 bg-cover bg-center opacity-80 blur-md"
-              style={{ backgroundImage: `url("${certificate.preview}")` }}
-            />
+          <div className="relative overflow-hidden">
             <img
               src={certificate.preview}
               alt=""
               loading="lazy"
-              className={`relative h-full w-full ${
-                certificate.imageFit === "cover" ? "object-cover" : "object-contain"
-              } transition-transform duration-500 ease-in-out ${
-                certificate.zoom ? "scale-110 group-hover:scale-[1.15]" : "group-hover:scale-105"
+              className={`h-auto w-full object-contain transition-transform duration-500 ease-in-out ${
+                certificate.zoom ? "scale-110 group-hover:scale-[1.15]" : "group-hover:scale-[1.02]"
               }`}
             />
           </div>

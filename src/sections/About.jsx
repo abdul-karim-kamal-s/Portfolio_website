@@ -32,7 +32,7 @@ const About = () => {
               <a
                 href="/assets/projects/Abdul_Karim_Kamal_S_Resume.pdf"
                 download="Abdul_Karim_Kamal_S_Resume.pdf"
-                className="inline-block px-6 py-2.5 bg-gradient-to-b from-[#f4f4f5] to-[#c4c4c7] hover:from-white hover:to-[#e4e4e7] text-[#111111] border border-white/80 hover:border-white font-semibold rounded-full transition-all duration-300 shadow-[0_3px_16px_rgba(255,255,255,0.16)] hover:shadow-[0_4px_20px_rgba(255,255,255,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#191919] cursor-pointer text-center text-sm"
+                className="inline-block px-6 py-2.5 bg-sky-300 hover:bg-sky-200 text-black border border-sky-300 hover:border-sky-200 font-semibold rounded-full transition-all duration-300 shadow-[0_3px_16px_rgba(56,189,248,0.2)] hover:shadow-[0_4px_20px_rgba(56,189,248,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#191919] cursor-pointer text-center text-sm"
               >
                 Download Resume
               </a>
