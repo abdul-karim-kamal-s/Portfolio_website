@@ -167,16 +167,16 @@ export const experiences = [
     date: "Aug 2023 – Present",
     contents: [
       "Studying core mechanical engineering concepts including Thermodynamics, Fluid Mechanics, and Kinematics while exploring robotics, embedded systems and automation.",
-      "Developing hands-on engineering projects that combine mechanical design, electronics, embedded control, and intelligent systems.",
+      "Developed hands-on engineering projects that combine mechanical design, electronics, embedded control, and intelligent systems.",
       "Working with tools and technologies including Arduino, ESP-32, Embedded C, CAD, robotics, and AI/ML.",
     ],
   },
   {
-    title: "Technical Project Developer / Robotics & Embedded Systems",
+    title: "Robotics & Embedded Systems",
     job: "",
     date: "2025 – Present",
     contents: [
-      "Designing and developing interdisciplinary prototypes that integrate mechanical components with embedded electronics and intelligent control.",
+      "Designed and developing interdisciplinary prototypes that integrate mechanical components with embedded electronics and intelligent control.",
       "Exploring practical applications of robotics, automation, renewable energy, and AI-driven engineering systems.",
       "Converting engineering concepts into functional prototypes through iterative design, fabrication, programming, and testing.",
     ],
@@ -186,8 +186,8 @@ export const experiences = [
     job: "",
     date: "2026 – Present",
     contents: [
-      "Developing advanced prototypes focused on robotics, embedded intelligence, automation, and mechanical system integration.",
-      "Developing a Hybrid Solar–Wind Energy Harvesting, Intelligent Solar Maintenance Rover, and Smart Charging Station for remote desert and arid environments.",
+      "Developed advanced prototypes focused on robotics, embedded intelligence, automation, and mechanical system integration.",
+      "Developed a Hybrid Solar–Wind Energy Harvesting, Intelligent Solar Maintenance Rover, and Smart Charging Station for remote desert and arid environments.",
     ],
   },
 ];
