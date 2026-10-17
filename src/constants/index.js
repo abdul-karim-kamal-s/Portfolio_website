@@ -166,8 +166,8 @@ export const experiences = [
     job: "Sri Krishna College of Engineering and Technology (SKCET)",
     date: "Aug 2023 – Present",
     contents: [
-      "Studying core mechanical engineering concepts including Thermodynamics, Fluid Mechanics, and Kinematics while exploring robotics, embedded systems and automation.",
-      "Developed hands-on engineering projects that combine mechanical design, electronics, embedded control, and intelligent systems.",
+      "Studying core mechanical engineering concepts including Thermodynamics, Fluid Mechanics and Kinematics while exploring robotics, embedded systems and automation.",
+      "Developed hands-on engineering projects that combine mechanical design, electronics, embedded control and intelligent systems.",
       "Working with tools and technologies including Arduino, ESP-32, Embedded C, CAD, robotics, and AI/ML.",
     ],
   },
@@ -177,8 +177,8 @@ export const experiences = [
     date: "2025 – Present",
     contents: [
       "Designed and developed interdisciplinary prototypes that integrate mechanical components with embedded electronics and intelligent control.",
-      "Exploring practical applications of robotics, automation, renewable energy, and AI-driven engineering systems.",
-      "Converting engineering concepts into functional prototypes through iterative design, fabrication, programming, and testing.",
+      "Exploring practical applications of robotics, automation, renewable energy and AI-driven engineering systems.",
+      "Converting engineering concepts into functional prototypes through iterative design, fabrication, programming and testing.",
     ],
   },
   {
@@ -186,8 +186,8 @@ export const experiences = [
     job: "",
     date: "2026 – Present",
     contents: [
-      "Developed advanced prototypes focused on robotics, embedded intelligence, automation, and mechanical system integration.",
-      "Developed a Hybrid Solar–Wind Energy Harvesting, Intelligent Solar Maintenance Rover, and Smart Charging Station for remote desert and arid environments.",
+      "Developed advanced prototypes focused on robotics, embedded intelligence, automation and mechanical system integration.",
+      "Developed a Hybrid Solar–Wind Energy Harvesting, Intelligent Solar Maintenance Rover and Smart Charging Station for remote desert and arid environments.",
     ],
   },
 ];
