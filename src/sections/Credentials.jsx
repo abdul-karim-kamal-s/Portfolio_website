@@ -102,7 +102,7 @@ const Credentials = () => {
       ],
     },
     {
-      title: "Other Certifications",
+      title: "Other Certificates",
       certificates: [
          {
           title: "Google Quiz Competition",
