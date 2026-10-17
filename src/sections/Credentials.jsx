@@ -51,11 +51,14 @@ const Credentials = () => {
       ],
     },
     {
+      title: "Technical & Skill Development",
       certificates: [
         {
           title: "Generative AI Mastermind",
           src: "/assets/certificates/outskill-course.pdf",
           preview: "/assets/certificates/previews/outskill-course.jpg",
+          zoom: true,
+          wide: true,
         },
         {
           title: "Nestlé E-learning | Resilience",
@@ -147,14 +150,14 @@ const Credentials = () => {
   // Reusable grid layout for the sections
   const renderImageGrid = (title, images) => (
     <div className="mb-20">
-      <h2 className="text-white font-bold text-3xl text-center mb-10 tracking-wide">
+      <h2 className="text-sky-200 font-bold text-3xl text-center mb-10 tracking-wide">
         {title}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 justify-items-center gap-8 px-3 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
         {images.map((src, index) => (
           <div 
             key={index} 
-            className="overflow-hidden rounded-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-black-200 group cursor-pointer"
+            className="w-full max-w-md overflow-hidden rounded-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-black-200 group cursor-pointer"
           >
             <img 
               src={src} 
@@ -171,7 +174,7 @@ const Credentials = () => {
   );
 
   const renderCertificateGrid = (certificates) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-4">
+    <div className="mx-auto grid max-w-7xl grid-cols-1 justify-items-center gap-8 px-3 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
       {certificates.map((certificate) => (
         <a
           key={certificate.src}
@@ -179,16 +182,18 @@ const Credentials = () => {
           target="_blank"
           rel="noreferrer"
           aria-label={`Open ${certificate.title} certificate PDF`}
-          className="block overflow-hidden rounded-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-black-200 group"
+          className="block w-full max-w-md overflow-hidden rounded-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-black-200 group"
         >
           <div className="relative overflow-hidden">
             <img
               src={certificate.preview}
               alt=""
               loading="lazy"
-              className={`aspect-[4/3] w-full ${
+              className={`${certificate.wide ? "aspect-[16/10]" : "aspect-[4/3]"} w-full ${
                 certificate.imageFit === "cover" ? "object-cover" : "object-contain"
-              } transition-transform duration-500 ease-in-out group-hover:scale-105`}
+              } transition-transform duration-500 ease-in-out ${
+                certificate.zoom ? "scale-110 group-hover:scale-[1.15]" : "group-hover:scale-105"
+              }`}
             />
           </div>
         </a>
@@ -199,7 +204,7 @@ const Credentials = () => {
   return (
     <section className="w-full py-20" id="credentials">
       <div className="mb-20">
-        <h2 className="text-white font-bold text-3xl text-center mb-10 tracking-wide">
+        <h2 className="text-sky-200 font-bold text-3xl text-center mb-10 tracking-wide">
           Certifications
         </h2>
         {displayedCertificateCategories.map((category) => (
