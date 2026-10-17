@@ -102,181 +102,44 @@ export const myProjects = [
       "•	Implemented MCP for device communication and task execution, demonstrating how conversational AI can simplify interaction with embedded systems without requiring users to manually write code.",
     ],
     href: "https://drive.google.com/file/d/1J2YeTPgPagysvkVPHvX4GNWtq60K6PrN/view?usp=drivesdk",
-    logo: "/assets/logos/esp32.png",
-    image: "/assets/projects/tarang.png",
+    logo: "/assets/projects/ncorithm-logo.png",
+    titleLogo: "/assets/projects/ncorithm-logo.png",
+    image: "/assets/projects/ncorithm-llm-2.jpg",
+    images: [
+      "/assets/projects/ncorithm-llm-2.jpg",
+      "/assets/projects/ncorithm-llm-1.jpg",
+    ],
     tags: [
       {
         id: 1,
-        name: "ESP32 / C++",
-        path: "/assets/logos/esp32.png",
+        name: "Ncorithm",
+        path: "/assets/projects/ncorithm-logo.png",
       },
     ],
   },
   {
     id: 5,
-    title: "Car Suspension & Steering System",
+    title: "Sthiraprana: Safe-Flow Intelligent Dialysis System",
     description:
-      "Complete 3D structural model and geometric constraint design for an automotive suspension assembly.",
+      "Developed an Intelligent Dialysis System designed to ensure patient safety and treatment continuity during earthquake emergencies.",
     subDescription: [
-      "Designed using Solid Edge for precision automotive modeling.",
-      "Focused on load distribution, joint articulation, and chassis mounting.",
-      "Evaluated spring compression and linkage limits.",
+      "Integrated earthquake, pressure, and air-bubble sensors to continuously monitor critical conditions in the dialysis bloodline. ",
+      "Designed an automatic emergency blood-flow switching mechanism that reroutes or stops blood flow when abnormal conditions are detected. ",
+      "Implemented a portable, battery-powered backup dialysis loop with alarms and safety mechanisms for reliable operation during emergencies.",
     ],
-    href: "https://sketchfab.com/models/3b4bcb5e7e614bda942c944bae1a2b85/embed",
-    logo: "/assets/logos/soildedge.webp",
-    image: "/assets/projects/car_suspenstion.png",
+    href: "",
+    logo: "/assets/projects/sthiraprana-logo.png",
+    titleLogo: "/assets/projects/sthiraprana-logo.png",
+    image: "/assets/projects/sthiraprana-dialysis-1.jpg",
+    images: [
+      "/assets/projects/sthiraprana-dialysis-1.jpg",
+      "/assets/projects/sthiraprana-dialysis-2.jpg",
+    ],
     tags: [
       {
         id: 1,
-        name: "Solid Edge",
-        path: "/assets/logos/soildedge.webp",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Automotive Car Wheel Assembly",
-    description:
-      "Precision parametric rim and tire CAD design optimized for structural integrity and aerodynamics.",
-    subDescription: [
-      "Created in Fusion 360 utilizing advanced surface modeling.",
-      "Built with parametric feature trees for rapid dimension adjustments.",
-      "Optimized geometry for weight reduction without sacrificing strength.",
-    ],
-    href: "https://sketchfab.com/models/4c905dfb7214429f9512014448c3e1b0/embed",
-    logo: "/assets/logos/fusion.png",
-    image: "/assets/projects/wheel.png",
-    tags: [
-      {
-        id: 1,
-        name: "Fusion 360",
-        path: "/assets/logos/fusion.png",
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: "Converging Pipe CFD Simulation",
-    description:
-      "Computational Fluid Dynamics (CFD) simulation examining velocity contours and pressure distribution.",
-    subDescription: [
-      "Analyzed using ANSYS Fluent to study turbulent boundary layers.",
-      "Evaluated pressure drops across varying cross-sections of the pipe.",
-      "Generated detailed fluid flow velocity pathlines and data reports.",
-    ],
-    href: "https://mathesh-mech.vercel.app",
-    logo: "/assets/logos/anys.png",
-    image: "/assets/projects/converging pipe poster.jpeg",
-    tags: [
-      {
-        id: 1,
-        name: "ANSYS Fluent",
-        path: "/assets/logos/ansys.png",
-      },
-    ],
-  },
-  {
-    id: 8,
-    title: "Laminar Pipe Flow Analysis",
-    description:
-      "Conducted a computational analysis of laminar flow through a constant-diameter pipe in ANSYS 2026 R1 (Student). The simulation effectively captures the development of a parabolic velocity profile, characterized by maximum velocity at the centerline and near-zero velocity at the walls due to the no-slip condition.",
-    subDescription: [
-      "Analysis Type: Laminar Pipe Flow",
-      "Key Findings: Fully developed parabolic velocity profile observed",
-      "Visualizations: Velocity contour plot and laminar streamline tracking",
-    ],
-    href: "https://mathesh-mech.vercel.app",
-    logo: "/assets/logos/ansys.png",
-    image: "/assets/projects/laminar pipe poster.jpeg",
-    tags: [
-      {
-        id: 1,
-        name: "ANSYS Fluent",
-        path: "/assets/logos/ansys.png",
-      },
-    ],
-  },
-  {
-    id: 9,
-    title: "Cantilever Beam FEA",
-    description:
-      "Performed a Static Structural analysis of a cantilever beam in ANSYS 2026 R1 (Student). Applied a point load at the free end with a fixed support at the base. Results show a maximum total deformation of 0.1925 mm at the free end, with zero deformation at the fixed support.",
-    subDescription: [
-      "Total Deformation: 0.1925 mm max",
-      "Fixed Support + Point Force",
-      "Equivalent Stress solved",
-    ],
-    href: "https://mathesh-mech.vercel.app",
-    logo: "/assets/logos/ansys.png",
-    image: "/assets/projects/beam screenshot.jpeg",
-    tags: [
-      {
-        id: 1,
-        name: "ANSYS Structural",
-        path: "/assets/logos/ansys.png",
-      },
-    ],
-  },
-  {
-    id: 10,
-    title: "Turbulent Flow Over a Backward-Facing Step",
-    description:
-      "Conducted a NASA-validated CFD simulation of turbulent flow over a backward-facing step. Validated wall shear stress and reattachment points against empirical NASA data to ensure computational accuracy.",
-    subDescription: [
-      "Validation: Compared against NASA experimental data",
-      "Flow Type: Turbulent Flow",
-      "Visualizations: Wall Shear X plots and velocity contours",
-    ],
-    href: "https://mathesh-mech.vercel.app",
-    logo: "/assets/logos/ansys.png",
-    image: "/assets/projects/turbulent velocity.jpeg",
-    tags: [
-      {
-        id: 1,
-        name: "ANSYS Fluent",
-        path: "/assets/logos/ansys.png",
-      },
-    ],
-  },
-  {
-    id: 11,
-    title: "Laminar Boundary Layer Over a Flat Plate",
-    description:
-      "Simulated the development of a laminar boundary layer over a flat plate. Successfully captured velocity contours and analyzed the boundary layer thickness growth along the length of the plate.",
-    subDescription: [
-      "Analysis: Laminar Boundary Layer development",
-      "Key Physics: Viscous effects and no-slip boundary condition",
-      "Visualizations: Velocity contours and vector plots",
-    ],
-    href: "https://mathesh-mech.vercel.app",
-    logo: "/assets/logos/ansys.png",
-    image: "/assets/projects/v.jpeg",
-    tags: [
-      {
-        id: 1,
-        name: "ANSYS Fluent",
-        path: "/assets/logos/ansys.png",
-      },
-    ],
-  },
-  {
-    id: 12,
-    title: "Tribute Page",
-    description:
-      "This tribute page highlights the career achievements and legacy of CR7. Built with HTML & CSS, fully responsive, and hosted live on Vercel.",
-    subDescription: [
-      "Tech Stack: HTML5 & CSS3",
-      "Fully Responsive Design",
-      "Live Deployment via Vercel",
-    ],
-    href: "https://cr7-tribute-page.vercel.app/",
-    logo: "/assets/logos/github.png",
-    image: "/assets/projects/tribute.png",
-    tags: [
-      {
-        id: 1,
-        name: "Web Development",
-        path: "/assets/logos/github.png",
+        name: "Sthiraprana",
+        path: "/assets/projects/sthiraprana-logo.png",
       },
     ],
   },

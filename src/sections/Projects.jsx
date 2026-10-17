@@ -283,7 +283,11 @@ const Projects = () => {
           <img
             src={hoveredProject.image}
             alt={hoveredProject.title}
-            className="w-full h-full object-cover rounded-2xl"
+            className={`w-full h-full rounded-2xl ${
+              hoveredProject.id === 2
+                ? "bg-neutral-900 object-contain"
+                : "object-cover"
+            }`}
           />
         </div>
       )}
