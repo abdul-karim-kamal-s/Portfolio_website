@@ -27,10 +27,12 @@ export const myProjects = [
       "/assets/projects/desert.png",
       "/assets/projects/desert-rover-chassis.jpeg",
       "/assets/projects/desert-solar-panels.jpeg",
-      "/assets/projects/desert-charging-station.jpeg",
-      "/assets/projects/desert-ev-charging-points.jpeg",
       "/assets/projects/desert-wind-turbines.jpeg",
       "/assets/projects/desert-wind-turbine-detail.jpeg",
+      "/assets/projects/desert-charging-station.jpeg",
+      "/assets/projects/desert-ev-charging-points.jpeg",
+    
+   
     ],
     tags: [
       {
