@@ -71,7 +71,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex items-center c-space section-spacing" id="contact">
+    <section className="relative flex w-full items-center justify-center overflow-hidden c-space section-spacing scroll-mt-20 sm:scroll-mt-24" id="contact">
       <Particles
         className="absolute inset-0 -z-50"
         quantity={100}
@@ -80,11 +80,11 @@ const Contact = () => {
         refresh
       />
       {showAlert && <Alert type={alertType} text={alertMessage} />}
-      <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
+      <div className="flex w-full max-w-md flex-col items-center justify-center p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
         <div className="flex flex-col items-start w-full gap-5 mb-10">
           <h2 className="text-heading">Let&apos;s Talk</h2>
           <p className="font-normal text-neutral-300">
-          Whether you're looking to collaborate on mechanical design, CAD modeling, robotics, embedded systems, or AI-integrated engineering projects, I'm here to help.
+          Whether you&apos;re looking to collaborate on mechanical design, CAD modeling, robotics, embedded systems or AI-integrated engineering projects, I&apos;m here to help.
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>

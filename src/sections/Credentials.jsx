@@ -77,11 +77,10 @@ const Credentials = () => {
           preview: "/assets/certificates/previews/skillathon-course.jpg",
         },
          {
-          title: "Junior Robot Operator and Programmer",
-          src: "/assets/certificates/junior-robot-operator-programmer.pdf",
-          type: "pdf",
-          orientation: "portrait",
-        },
+           title: "Junior Robot Operator and Programmer",
+           src: "/assets/certificates/junior-robot-operator-programmer.pdf",
+           preview: "/assets/certificates/previews/junior-robot-operator-programmer.jpg",
+         },
         {
           title: "MySQL DBMS",
           src: "/assets/certificates/dbms-online-course.pdf",
@@ -90,14 +89,12 @@ const Credentials = () => {
         {
           title: "Solid Edge Associate Level CAD Certification",
           src: "/assets/certificates/solid-edge-associate-cad.pdf",
-          type: "pdf",
-          orientation: "portrait",
+          preview: "/assets/certificates/previews/solid-edge-associate-cad.jpg",
         },
         {
           title: "National IPR Training Program",
           src: "/assets/certificates/national-ipr-training-program.pdf",
-          type: "pdf",
-          orientation: "portrait",
+          preview: "/assets/certificates/previews/national-ipr-training-program.jpg",
         },
       ],
     },
@@ -158,12 +155,12 @@ const Credentials = () => {
     {
       src: "/assets/projects/isnee-motorsports-certificate.pdf",
       title: "ISNEE Motorsports Certificate",
-      type: "pdf",
+      preview: "/assets/certificates/previews/isnee-motorsports-certificate.jpg",
     },
     {
       src: "/assets/projects/tnkc-certificate.pdf",
       title: "TNKC Certificate",
-      type: "pdf",
+      preview: "/assets/certificates/previews/tnkc-certificate.jpg",
     },
   ];
 
@@ -232,23 +229,15 @@ const Credentials = () => {
                     title === "Internship Experience" ? "aspect-[3/4]" : "aspect-[4/3]"
                   }`}
                 >
-                  {achievement.type === "pdf" ? (
-                    <iframe
-                      src={`${achievement.src}#view=Fit&toolbar=0&navpanes=0&scrollbar=0`}
-                      title={achievement.title}
-                      className="pointer-events-none h-full w-full border-0"
-                    />
-                  ) : (
-                    <img
-                      src={achievement.src}
-                      alt={achievement.title}
-                      loading="lazy"
-                      className="h-full w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[1.02]"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  )}
+                  <img
+                    src={achievement.preview ?? achievement.src}
+                    alt={achievement.title}
+                    loading="lazy"
+                    className="h-full w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[1.02]"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
                 </div>
               </a>
             );
@@ -270,20 +259,12 @@ const Credentials = () => {
           className="block w-full overflow-hidden rounded-xl bg-black-200 group"
         >
           <div className="relative aspect-[4/3] w-full overflow-hidden">
-            {certificate.type === "pdf" ? (
-              <iframe
-                src={`${certificate.src}#view=Fit&toolbar=0&navpanes=0&scrollbar=0`}
-                title={certificate.title}
-                className="pointer-events-none h-full w-full border-0"
-              />
-            ) : (
-              <img
-                src={certificate.preview}
-                alt=""
-                loading="lazy"
-                className="h-full w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[1.02]"
-              />
-            )}
+            <img
+              src={certificate.preview}
+              alt={certificate.title}
+              loading="lazy"
+              className="h-full w-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[1.02]"
+            />
           </div>
         </a>
       ))}
@@ -291,7 +272,7 @@ const Credentials = () => {
   );
 
   return (
-    <section className="w-full py-20" id="credentials">
+    <section className="w-full py-20 scroll-mt-20 sm:scroll-mt-24" id="credentials">
       <div className="mb-20">
         <h2 className="text-sky-200 font-bold text-3xl text-center mb-10 tracking-wide">
           Certifications

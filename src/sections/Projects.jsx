@@ -150,8 +150,8 @@ const ProjectModal = ({ project, onClose }) => {
             </div>
           )}
 
-          <div className="mt-4 flex items-center justify-between pt-5 border-t border-neutral-800">
-            <div className="flex items-center gap-3">
+          <div className="mt-4 flex flex-col items-start gap-4 border-t border-neutral-800 pt-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex min-w-0 items-center gap-3">
               {project.titleLogo ? (
                 <img
                   src={project.titleLogo}
@@ -165,7 +165,7 @@ const ProjectModal = ({ project, onClose }) => {
                   className="w-7 h-7 object-contain"
                 />
               ) : null}
-              <span className="text-xs font-mono text-sky-200">
+              <span className="break-words text-xs font-mono text-sky-200">
                 {project.tags?.[0]?.name || project.category}
               </span>
             </div>
@@ -226,7 +226,7 @@ const Projects = () => {
   }, [selectedProjectForModal]);
 
   return (
-    <section className="relative w-full py-16 text-white" id="projects">
+    <section className="relative w-full py-16 text-white scroll-mt-20 sm:scroll-mt-24" id="projects">
       {/* 1. Final Year Project */}
       <div className="w-full mb-8">
         <div className="px-6 md:px-12 mb-4">

@@ -15,18 +15,11 @@ const App = () => {
     <div className="w-full">
       <Navbar />
 
-      <section id="home">
-        <Hero />
-      </section>
-
-      <section id="about">
-        <About />
-      </section>
+      <Hero />
+      <About />
 
       {/* 1. Projects Section MUST BE FIRST */}
-      <section id="projects">
-        <Projects />
-      </section>
+      <Projects />
 
       <Credentials />
 
@@ -36,9 +29,7 @@ const App = () => {
 
       <Testimonial />
 
-      <section id="contact">
-        <Contact />
-      </section>
+      <Contact />
 
       <Footer />
 
