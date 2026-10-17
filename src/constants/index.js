@@ -20,7 +20,7 @@ export const myProjects = [
       "Automated Battery Control: Autonomous charge sequencing that initiates on demand and cuts off at full capacity.",
       "Dust Detection & Cleaning Rover: Sensor-triggered autonomous rover deployed for dry/wet panel cleaning upon detecting output loss.",
     ],
-    href: "https://skfb.ly/pOYuQhttps://sketchfab.com/3d-models/station-fb45b4ae8f3841249f918fe476397c1e",
+    href: "https://skfb.ly/pOYuQ",
     logo: "/assets/logos/esp32.png",
     image: "/assets/projects/desert.png",
     images: [
