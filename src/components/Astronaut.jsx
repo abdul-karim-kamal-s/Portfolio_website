@@ -37,7 +37,7 @@ const easeOutBack = (t) => {
   return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
 };
 
-export function Astronaut({ position, scale = 20 }) {
+export function Astronaut({ position, scale = 30 }) {
   const introRef = useRef(null);
   const idleRef = useRef(null);
   const startTime = useRef(null);
@@ -82,9 +82,9 @@ export function Astronaut({ position, scale = 20 }) {
     -viewport.width / 2 - bounds.min.x * modelScale + horizontalGap;
   const maxX =
     viewport.width / 2 - bounds.max.x * modelScale - horizontalGap;
-  const wantedX = isMobile ? 0 : viewport.width * 0.12;
+  const wantedX = viewport.width * 0.12;
   const modelPosition = position ?? [
-    THREE.MathUtils.clamp(wantedX, minX, maxX),
+    isMobile ? 0 : THREE.MathUtils.clamp(wantedX, minX, maxX),
     fitY,
     0,
   ];

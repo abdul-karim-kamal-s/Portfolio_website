@@ -21,14 +21,14 @@ const Hero = () => {
         <div className="absolute inset-y-0 left-0 z-0 w-full bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none sm:w-1/3 lg:w-1/4" />
       </div>
 
-      <div className="relative z-30 mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-6 pb-8 pt-16 sm:px-10 md:gap-8 md:pt-24 lg:flex-row lg:justify-between lg:px-16 lg:pb-12">
-        <div className="flex w-full flex-col items-start lg:w-1/2">
+      <div className="relative z-30 mx-auto flex w-full max-w-7xl flex-col items-center gap-0 px-6 pb-8 pt-16 sm:px-10 md:gap-8 md:pt-24 lg:flex-row lg:items-start lg:justify-between lg:px-16 lg:pb-12">
+        <div className="flex w-full flex-col items-center text-center lg:w-1/2 lg:items-start lg:text-left">
           <HeroText />
         </div>
 
         <div
           aria-hidden="true"
-          className="h-[min(52vh,440px)] min-h-[320px] w-full shrink-0 lg:h-[700px] lg:w-1/2"
+          className="h-[550px] min-h-[550px] w-full shrink-0 lg:h-[700px] lg:min-h-0 lg:w-1/2"
         >
           <Canvas
             camera={{ position: [0, 0, 6], fov: 45 }}
