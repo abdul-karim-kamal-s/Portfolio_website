@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdulkk-mech.vercel.app/sitemap.xml
