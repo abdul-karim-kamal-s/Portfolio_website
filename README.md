@@ -1,9 +1,9 @@
 # 🚀 3D Engineering & Developer Portfolio | Abdul Karim Kamal S
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-4ade80?style=for-the-badge&logo=vercel)](https://github.com/abdul-karim-kamal-s/Portfolio_website)
-[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](#)
-[![Threejs](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)](#)
-[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-4ade80?style=for-the-badge&logo=vercel)](https://abdulkk-mech.vercel.app/)
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
+[![Threejs](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 A modern, animated 3D developer portfolio built with React, Three.js, TailwindCSS, and motion effects. This project creatively showcases my expertise spanning mechanical design (Solid Edge, CAD), robotics, embedded systems (ESP32, IoT), and AI integrations.
 
