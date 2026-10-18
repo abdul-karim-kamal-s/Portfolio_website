@@ -37,7 +37,7 @@ const easeOutBack = (t) => {
   return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
 };
 
-export function Astronaut({ position, scale = 11 }) {
+export function Astronaut({ position, scale = 20 }) {
   const introRef = useRef(null);
   const idleRef = useRef(null);
   const startTime = useRef(null);
