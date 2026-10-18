@@ -11,12 +11,9 @@ const MODEL_PATH = "/raiden.glb";
 const BASE_ROTATION = [0, 0.35, Math.PI + 0.18];
 
 // Layout
-const NAV_PX = 80;       // navbar height in px
-const TOP_GAP_PX = 10;   // space kept between the navbar and the model
 const BOTTOM_GAP = 0.1;  // space kept at the bottom (world units)
 const RIGHT_GAP = 0.3;   // space kept at the right edge (world units)
-const MOBILE_EDGE_GAP_RATIO = 0.02;
-const MOBILE_WIDTH_RATIO = 0.9;
+const MOBILE_EDGE_GAP_RATIO = 0.03;
 
 // Intro animation
 const INTRO_DELAY = 0.3;
@@ -40,7 +37,7 @@ const easeOutBack = (t) => {
   return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
 };
 
-export function Astronaut({ position, scale = 11, mobileTextBottom = 0 }) {
+export function Astronaut({ position, scale = 11 }) {
   const introRef = useRef(null);
   const idleRef = useRef(null);
   const startTime = useRef(null);
@@ -65,37 +62,29 @@ export function Astronaut({ position, scale = 11, mobileTextBottom = 0 }) {
     return box;
   }, [scene]);
 
-  // Work out scale and position so the model always fits under the navbar
-  const topMargin = isMobile
-    ? ((mobileTextBottom || size.height * 0.4) / size.height) * viewport.height
-    : ((NAV_PX + TOP_GAP_PX) / size.height) * viewport.height +
-      IDLE_BOB +
-      0.05;
-  const bottomMargin = isMobile ? 0 : BOTTOM_GAP + IDLE_BOB;
-  const availableHeight = viewport.height - topMargin - bottomMargin;
+  // Fit the full model bounds inside this Canvas, including its idle motion.
+  const availableHeight = viewport.height - BOTTOM_GAP * 2 - IDLE_BOB * 2;
   const modelHeight1 = Math.max(bounds.max.y - bounds.min.y, 0.0001);
   const modelWidth1 = Math.max(bounds.max.x - bounds.min.x, 0.0001);
 
-  const wantedScale = isMobile ? Infinity : scale;
-  const mobileEdgeGap = viewport.width * MOBILE_EDGE_GAP_RATIO;
-  const mobileWidthFit = isMobile
-    ? (viewport.width * MOBILE_WIDTH_RATIO) / modelWidth1
-    : Infinity;
+  const horizontalGap = isMobile
+    ? viewport.width * MOBILE_EDGE_GAP_RATIO
+    : RIGHT_GAP;
+  const availableWidth = viewport.width - horizontalGap * 2 - IDLE_DRIFT * 2;
   const modelScale = Math.min(
-    wantedScale,
+    scale,
     availableHeight / modelHeight1,
-    mobileWidthFit,
+    availableWidth / modelWidth1,
   );
 
-  const fitY = viewport.height / 2 - topMargin - bounds.max.y * modelScale;
-  const wantedX = isMobile
-    ? viewport.width / 2 -
-      mobileEdgeGap -
-      bounds.max.x * modelScale
-    : viewport.width * 0.27;
-  const maxX = viewport.width / 2 - bounds.max.x * modelScale - RIGHT_GAP;
+  const fitY = -((bounds.min.y + bounds.max.y) / 2) * modelScale;
+  const minX =
+    -viewport.width / 2 - bounds.min.x * modelScale + horizontalGap;
+  const maxX =
+    viewport.width / 2 - bounds.max.x * modelScale - horizontalGap;
+  const wantedX = isMobile ? 0 : viewport.width * 0.12;
   const modelPosition = position ?? [
-    isMobile ? wantedX : Math.min(wantedX, maxX),
+    THREE.MathUtils.clamp(wantedX, minX, maxX),
     fitY,
     0,
   ];
