@@ -2,17 +2,19 @@
 
 import { useRef } from "react";
 import { Float, useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 const MODEL_PATH = "/raiden.glb";
 
 export function Astronaut({
-  position = [0.8, 2, 0],
-  scale = 6.5,
+  position,
+  scale = 7.5,
 }) {
   const modelRef = useRef(null);
   const { scene } = useGLTF(MODEL_PATH);
+  const { viewport } = useThree();
+  const modelPosition = position ?? [viewport.width * 0.22, 1.8, 0];
 
   useFrame((state) => {
     if (!modelRef.current) return;
@@ -34,15 +36,15 @@ export function Astronaut({
 
   return (
     <Float
-      speed={2}
-      rotationIntensity={0.2}
-      floatIntensity={0.4}
-      floatingRange={[-0.1, 0.1]}
+      speed={1.2}
+      rotationIntensity={0.08}
+      floatIntensity={0.25}
+      floatingRange={[-0.15, 0.15]}
     >
       <primitive
         ref={modelRef}
         object={scene}
-        position={position}
+        position={modelPosition}
         rotation={[0.35, Math.PI / 2, Math.PI + 0.18]}
         scale={scale}
       />
