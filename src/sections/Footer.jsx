@@ -2,7 +2,7 @@ const socialLinks = [
   {
     id: 1,
     name: "GitHub",
-    link: "https://github.com/Matheshs777",
+    link: "https://github.com/abdul-karim-kamal-s",
     hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
     icon: (
       <svg className="w-7 h-7 fill-white group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
@@ -24,7 +24,7 @@ const socialLinks = [
   {
     id: 4,
     name: "Gmail",
-    link: "mailto:matheshs777@gmail.com",
+    link: "mailto:abdulkarimkamal@gmail.com",
     hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
