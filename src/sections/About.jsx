@@ -140,7 +140,7 @@ const About = () => {
               smart automation projects and multidisciplinary research worldwide.
             </p>
           </div>
-          <figure className="absolute left-[30%] top-[10%]">
+          <figure className="absolute left-[35%] top-[10%]">
             <Globe />
           </figure>
         </div>
