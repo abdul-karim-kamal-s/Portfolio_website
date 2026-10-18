@@ -1,36 +1,37 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { Menu, X } from "lucide-react";
 
-function Navigation({ onClick }) {
+function Navigation() {
   return (
     <ul className="nav-ul">
       <li className="nav-li">
-        <a className="nav-link" href="#home" onClick={onClick}>
+        <a className="nav-link" href="#home">
           Home
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#about" onClick={onClick}>
+        <a className="nav-link" href="#about">
           About
         </a>
       </li>
 
       {/* 1. Projects Link First */}
       <li className="nav-li">
-        <a className="nav-link" href="#projects" onClick={onClick}>
+        <a className="nav-link" href="#projects">
           Projects
         </a>
       </li>
 
       {/* 2. Credentials Link Next */}
       <li className="nav-li">
-        <a className="nav-link" href="#credentials" onClick={onClick}>
+        <a className="nav-link" href="#credentials">
           Credentials
         </a>
       </li>
 
       <li className="nav-li">
-        <a className="nav-link" href="#contact" onClick={onClick}>
+        <a className="nav-link" href="#contact">
           Contact
         </a>
       </li>
@@ -45,44 +46,50 @@ const Navbar = () => {
     setIsOpen(false);
   };
   return (
-    <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
+    <header className="fixed inset-x-0 z-50 w-full backdrop-blur-lg bg-primary/40">
       <div className="mx-auto c-space max-w-7xl">
         <div className="flex items-center justify-between py-2 sm:py-0">
           <a
-            href="/"
+            href="#home"
             className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
+            onClick={closeMenu}
           >
-           Abdul Karim Kamal S
+            Abdul Karim Kamal S
           </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
+            className="flex cursor-pointer text-neutral-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:hidden"
+            type="button"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
-            <img
-              src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
-              className="w-6 h-6"
-              alt="toggle"
-            />
+            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
-          <nav className="hidden sm:flex">
+          <nav aria-label="Main navigation" className="hidden sm:flex">
             <Navigation />
           </nav>
         </div>
       </div>
       {isOpen && (
         <motion.div
-          className="block overflow-hidden text-center sm:hidden"
+          id="mobile-navigation"
+          className="block overflow-hidden border-t border-white/10 bg-primary/95 text-center sm:hidden"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           style={{ maxHeight: "100vh" }}
           transition={{ duration: 0.3 }}
         >
-          <nav className="pb-5">
-            <Navigation onClick={closeMenu} />
+          <nav
+            aria-label="Mobile navigation"
+            className="pb-5"
+            onClick={closeMenu}
+          >
+            <Navigation />
           </nav>
         </motion.div>
       )}
-    </div>
+    </header>
   );
 };
 
