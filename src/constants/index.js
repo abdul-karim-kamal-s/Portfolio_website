@@ -149,11 +149,6 @@ export const mySocials = [
     icon: "/assets/logos/github.png",
   },
   {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/abdul-karim-kamal-s",
-    icon: "/assets/socials/linkedIn.svg",
-  },
-  {
     name: "Email",
     href: "mailto:abdulkarimkamal@gmail.com",
     icon: "/assets/socials/email.jpg",
