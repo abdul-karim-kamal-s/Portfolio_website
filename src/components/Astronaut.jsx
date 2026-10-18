@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property, react/prop-types */
 
-import { useEffect, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
@@ -15,13 +15,8 @@ const NAV_PX = 80;       // navbar height in px
 const TOP_GAP_PX = 10;   // space kept between the navbar and the model
 const BOTTOM_GAP = 0.1;  // space kept at the bottom (world units)
 const RIGHT_GAP = 0.3;   // space kept at the right edge (world units)
-
-// Drag rotation
-const DRAG_SPEED = 0.01;
-const INERTIA = 0.94;
-const ALLOW_TILT = true;
-const TILT_LIMIT = 0.6;  // max up/down tilt (radians)
-const HIT_PADDING = 20;
+const MOBILE_EDGE_GAP_RATIO = 0;
+const MOBILE_WIDTH_RATIO = 1;
 
 // Intro animation
 const INTRO_DELAY = 0.3;
@@ -45,19 +40,15 @@ const easeOutBack = (t) => {
   return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
 };
 
-export function Astronaut({ position, scale = 11 }) {
+export function Astronaut({ position, scale = 11, mobileTextBottom = 0 }) {
   const introRef = useRef(null);
   const idleRef = useRef(null);
-  const spinRef = useRef(null);
-
-  const drag = useRef({ active: false, x: 0, y: 0 });
-  const velocity = useRef({ x: 0, y: 0 });
   const startTime = useRef(null);
   const introDone = useRef(false);
   const idleAmount = useRef(0);
 
   const { scene } = useGLTF(MODEL_PATH);
-  const { viewport, size, camera, gl } = useThree();
+  const { viewport, size } = useThree();
   const isMobile = size.width < 768;
 
   // Model bounds at scale 1 in its starting pose, relative to its pivot
@@ -75,108 +66,42 @@ export function Astronaut({ position, scale = 11 }) {
   }, [scene]);
 
   // Work out scale and position so the model always fits under the navbar
-  const topMargin =
-    ((NAV_PX + TOP_GAP_PX) / size.height) * viewport.height + IDLE_BOB + 0.05;
-  const bottomMargin = BOTTOM_GAP + IDLE_BOB;
+  const topMargin = isMobile
+    ? ((mobileTextBottom || size.height * 0.4) / size.height) * viewport.height
+    : ((NAV_PX + TOP_GAP_PX) / size.height) * viewport.height +
+      IDLE_BOB +
+      0.05;
+  const bottomMargin = isMobile ? 0 : BOTTOM_GAP + IDLE_BOB;
   const availableHeight = viewport.height - topMargin - bottomMargin;
   const modelHeight1 = Math.max(bounds.max.y - bounds.min.y, 0.0001);
+  const modelWidth1 = Math.max(bounds.max.x - bounds.min.x, 0.0001);
 
-  const wantedScale = isMobile ? Math.min(scale, 5) : scale;
-  const modelScale = Math.min(wantedScale, availableHeight / modelHeight1);
+  const wantedScale = isMobile ? Math.max(scale, 20) : scale;
+  const mobileEdgeGap = viewport.width * MOBILE_EDGE_GAP_RATIO;
+  const mobileWidthFit = isMobile
+    ? (viewport.width * MOBILE_WIDTH_RATIO - IDLE_DRIFT * 2) / modelWidth1
+    : Infinity;
+  const modelScale = Math.min(
+    wantedScale,
+    availableHeight / modelHeight1,
+    mobileWidthFit,
+  );
 
   const fitY = viewport.height / 2 - topMargin - bounds.max.y * modelScale;
-  const wantedX = isMobile ? 0 : viewport.width * 0.27;
-  const maxX = viewport.width / 2 - Math.max(bounds.max.x, 0) * modelScale - RIGHT_GAP;
-  const modelPosition = position ?? [Math.min(wantedX, maxX), fitY, 0];
-
-  // Click and drag rotation
-  useEffect(() => {
-    const box = new THREE.Box3();
-    const corner = new THREE.Vector3();
-
-    const isOverModel = (e) => {
-      if (!spinRef.current) return false;
-      spinRef.current.updateWorldMatrix(true, true);
-      box.setFromObject(spinRef.current);
-      if (box.isEmpty()) return false;
-
-      const rect = gl.domElement.getBoundingClientRect();
-      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-
-      for (let i = 0; i < 8; i++) {
-        corner.set(
-          i & 1 ? box.max.x : box.min.x,
-          i & 2 ? box.max.y : box.min.y,
-          i & 4 ? box.max.z : box.min.z,
-        ).project(camera);
-        const px = (corner.x * 0.5 + 0.5) * rect.width + rect.left;
-        const py = (-corner.y * 0.5 + 0.5) * rect.height + rect.top;
-        minX = Math.min(minX, px); maxX = Math.max(maxX, px);
-        minY = Math.min(minY, py); maxY = Math.max(maxY, py);
-      }
-
-      return (
-        e.clientX >= minX - HIT_PADDING && e.clientX <= maxX + HIT_PADDING &&
-        e.clientY >= minY - HIT_PADDING && e.clientY <= maxY + HIT_PADDING
-      );
-    };
-
-    const onDown = (e) => {
-      if (!introDone.current || !isOverModel(e)) return;
-      drag.current = { active: true, x: e.clientX, y: e.clientY };
-      velocity.current = { x: 0, y: 0 };
-      document.body.style.cursor = "grabbing";
-      document.body.style.userSelect = "none";
-    };
-
-    const onMove = (e) => {
-      if (!drag.current.active) {
-        document.body.style.cursor =
-          introDone.current && isOverModel(e) ? "grab" : "auto";
-        return;
-      }
-      if (!spinRef.current) return;
-
-      const dx = e.clientX - drag.current.x;
-      const dy = e.clientY - drag.current.y;
-      drag.current.x = e.clientX;
-      drag.current.y = e.clientY;
-
-      velocity.current.y = dx * DRAG_SPEED;
-      velocity.current.x = ALLOW_TILT ? dy * DRAG_SPEED : 0;
-
-      spinRef.current.rotation.y += velocity.current.y; // full turns, no limit
-      spinRef.current.rotation.x = THREE.MathUtils.clamp(
-        spinRef.current.rotation.x + velocity.current.x,
-        -TILT_LIMIT,
-        TILT_LIMIT,
-      );
-    };
-
-    const onUp = () => {
-      if (!drag.current.active) return;
-      drag.current.active = false;
-      document.body.style.cursor = "auto";
-      document.body.style.userSelect = "";
-    };
-
-    window.addEventListener("pointerdown", onDown);
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
-    window.addEventListener("pointercancel", onUp);
-    return () => {
-      window.removeEventListener("pointerdown", onDown);
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerup", onUp);
-      window.removeEventListener("pointercancel", onUp);
-    };
-  }, [camera, gl]);
+  const wantedX = isMobile
+    ? viewport.width / 2 - mobileEdgeGap - bounds.max.x * modelScale
+    : viewport.width * 0.27;
+  const maxX = viewport.width / 2 - bounds.max.x * modelScale - RIGHT_GAP;
+  const modelPosition = position ?? [
+    Math.min(wantedX, maxX),
+    fitY,
+    0,
+  ];
 
   useFrame((state, delta) => {
     const intro = introRef.current;
     const idle = idleRef.current;
-    const spin = spinRef.current;
-    if (!intro || !idle || !spin) return;
+    if (!intro || !idle) return;
 
     const now = state.clock.elapsedTime;
     if (startTime.current === null) startTime.current = now;
@@ -197,30 +122,10 @@ export function Astronaut({ position, scale = 11 }) {
     }
     if (p >= 1) introDone.current = true;
 
-    // 2) Drag inertia
-    if (!drag.current.active) {
-      spin.rotation.y += velocity.current.y;
-      spin.rotation.x = THREE.MathUtils.clamp(
-        spin.rotation.x + velocity.current.x,
-        -TILT_LIMIT,
-        TILT_LIMIT,
-      );
-      velocity.current.y *= INERTIA;
-      velocity.current.x *= INERTIA;
-      if (Math.abs(velocity.current.y) < 0.0001) velocity.current.y = 0;
-      if (Math.abs(velocity.current.x) < 0.0001) velocity.current.x = 0;
-    }
-
-    // 3) Idle movement, only when resting
-    const resting =
-      introDone.current &&
-      !drag.current.active &&
-      Math.abs(velocity.current.x) < 0.002 &&
-      Math.abs(velocity.current.y) < 0.002;
-
+    // 2) Small idle movement once the intro has finished
     idleAmount.current = THREE.MathUtils.lerp(
       idleAmount.current,
-      resting ? 1 : 0,
+      introDone.current ? 1 : 0,
       1 - Math.exp(-delta * 2.5),
     );
 
@@ -236,13 +141,11 @@ export function Astronaut({ position, scale = 11 }) {
     <group position={modelPosition}>
       <group ref={introRef} scale={0.0001}>
         <group ref={idleRef}>
-          <group ref={spinRef} rotation-order="YXZ">
-            <primitive
-              object={scene}
-              rotation={BASE_ROTATION}
-              scale={modelScale}
-            />
-          </group>
+          <primitive
+            object={scene}
+            rotation={BASE_ROTATION}
+            scale={modelScale}
+          />
         </group>
       </group>
     </group>

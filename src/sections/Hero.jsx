@@ -1,14 +1,37 @@
 /* eslint-disable react/no-unknown-property */
 
-import { Suspense } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import HeroText from "../components/HeroText";
 import { Astronaut } from "../components/Astronaut";
 
 const Hero = () => {
+  const heroRef = useRef(null);
+  const textRef = useRef(null);
+  const [mobileTextBottom, setMobileTextBottom] = useState(0);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const text = textRef.current;
+    if (!hero || !text) return;
+
+    const updateTextBottom = () => {
+      setMobileTextBottom(
+        text.getBoundingClientRect().bottom - hero.getBoundingClientRect().top,
+      );
+    };
+    const observer = new ResizeObserver(updateTextBottom);
+    observer.observe(hero);
+    observer.observe(text);
+    updateTextBottom();
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={heroRef}
       className="relative min-h-screen w-full flex items-center justify-between overflow-hidden bg-[#232323]"
       id="home"
     >
@@ -46,19 +69,19 @@ const Hero = () => {
               intensity={12}
               distance={10}
             />
-            <Astronaut />
+            <Astronaut mobileTextBottom={mobileTextBottom} />
           </Suspense>
         </Canvas>
       </div>
 
       <div className="relative z-30 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-8 pt-24 pb-12">
-        <div className="w-full lg:w-1/2 flex flex-col items-start">
+        <div ref={textRef} className="w-full lg:w-1/2 flex flex-col items-start">
           <HeroText />
         </div>
 
         <div
           aria-hidden="true"
-          className="h-[450px] w-full sm:h-[550px] lg:h-[650px] lg:w-1/2"
+          className="h-0 w-full md:h-[550px] lg:h-[650px] lg:w-1/2"
         />
       </div>
 
