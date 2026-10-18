@@ -15,8 +15,8 @@ const NAV_PX = 80;       // navbar height in px
 const TOP_GAP_PX = 10;   // space kept between the navbar and the model
 const BOTTOM_GAP = 0.1;  // space kept at the bottom (world units)
 const RIGHT_GAP = 0.3;   // space kept at the right edge (world units)
-const MOBILE_EDGE_GAP_RATIO = 0;
-const MOBILE_WIDTH_RATIO = 1;
+const MOBILE_EDGE_GAP_RATIO = 0.01;
+const MOBILE_WIDTH_RATIO = 1 - MOBILE_EDGE_GAP_RATIO * 2;
 
 // Intro animation
 const INTRO_DELAY = 0.3;
@@ -76,7 +76,7 @@ export function Astronaut({ position, scale = 11, mobileTextBottom = 0 }) {
   const modelHeight1 = Math.max(bounds.max.y - bounds.min.y, 0.0001);
   const modelWidth1 = Math.max(bounds.max.x - bounds.min.x, 0.0001);
 
-  const wantedScale = isMobile ? Math.max(scale, 20) : scale;
+  const wantedScale = isMobile ? Infinity : scale;
   const mobileEdgeGap = viewport.width * MOBILE_EDGE_GAP_RATIO;
   const mobileWidthFit = isMobile
     ? (viewport.width * MOBILE_WIDTH_RATIO - IDLE_DRIFT * 2) / modelWidth1
@@ -93,7 +93,7 @@ export function Astronaut({ position, scale = 11, mobileTextBottom = 0 }) {
     : viewport.width * 0.27;
   const maxX = viewport.width / 2 - bounds.max.x * modelScale - RIGHT_GAP;
   const modelPosition = position ?? [
-    Math.min(wantedX, maxX),
+    isMobile ? wantedX : Math.min(wantedX, maxX),
     fitY,
     0,
   ];

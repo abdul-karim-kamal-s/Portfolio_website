@@ -9,7 +9,7 @@ const HeroText = () => {
   };
 
   return (
-    <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
+    <div className="z-10 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
       {/* Desktop View */}
       <div className="flex-col hidden md:flex c-space">
         <motion.h1
@@ -19,7 +19,7 @@ const HeroText = () => {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi, I'm Abdul Karim Kamal S
+          Hi, I&apos;m Abdul Karim Kamal S
         </motion.h1>
         <div className="flex flex-col items-start mt-2">
           <motion.p
@@ -64,7 +64,7 @@ const HeroText = () => {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi, I'm Abdul Karim Kamal S
+          Hi, I&apos;m Abdul Karim Kamal S
         </motion.p>
         <div className="flex flex-col gap-2">
           <motion.p

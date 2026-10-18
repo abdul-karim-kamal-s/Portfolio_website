@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen w-full flex items-center justify-between overflow-hidden bg-[#232323]"
+      className="relative min-h-screen w-full flex items-start md:items-center justify-between overflow-hidden bg-[#232323]"
       id="home"
     >
       <div aria-hidden="true" className="absolute inset-0">
@@ -74,7 +74,7 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      <div className="relative z-30 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-8 pt-24 pb-12">
+      <div className="relative z-30 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-0 md:gap-8 pt-16 md:pt-24 pb-0 md:pb-12">
         <div ref={textRef} className="w-full lg:w-1/2 flex flex-col items-start">
           <HeroText />
         </div>
