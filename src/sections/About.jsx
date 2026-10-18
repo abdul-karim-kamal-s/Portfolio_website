@@ -13,7 +13,7 @@ const About = () => {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
         {/* Grid 1: Profile & Resume */}
-        <div className="flex items-end grid-default-color grid-1 about-card relative overflow-hidden rounded-2xl">
+        <div className="flex items-start md:items-end grid-default-color grid-1 about-card relative h-auto min-h-[24rem] md:h-full overflow-hidden rounded-2xl">
           <img
             src="/assets/card.webp"
             alt=""
@@ -21,7 +21,7 @@ const About = () => {
             className="absolute inset-0 h-full w-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#232323]/80 via-[#232323]/45 to-[#232323]/25" />
-          <div className="z-10 p-2 sm:p-4">
+          <div className="z-10 p-4 sm:p-5">
             <p className="headtext about-card-heading-white">Hi, I&apos;m Abdul</p>
             <p className="subtext">
               As a B.E. Mechanical Engineering student at SKCET, I am passionate about building intelligent systems where mechanics meets electronics and robotics. I enjoy turning ideas into functional prototypes through automation, embedded systems, mechanical design and hands-on engineering.

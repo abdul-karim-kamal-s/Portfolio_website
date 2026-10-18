@@ -13,8 +13,11 @@ export function Astronaut({
 }) {
   const modelRef = useRef(null);
   const { scene } = useGLTF(MODEL_PATH);
-  const { viewport } = useThree();
-  const modelPosition = position ?? [viewport.width * 0.22, 1.8, 0];
+  const { viewport, size } = useThree();
+  const isMobile = size.width < 768;
+  const modelPosition =
+    position ?? [isMobile ? 0 : viewport.width * 0.22, isMobile ? 0.35 : 1.8, 0];
+  const modelScale = isMobile ? Math.min(scale, 4.8) : scale;
 
   useFrame((state) => {
     if (!modelRef.current) return;
@@ -46,7 +49,7 @@ export function Astronaut({
         object={scene}
         position={modelPosition}
         rotation={[0.35, Math.PI / 2, Math.PI + 0.18]}
-        scale={scale}
+        scale={modelScale}
       />
     </Float>
   );
