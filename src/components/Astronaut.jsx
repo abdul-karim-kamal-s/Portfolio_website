@@ -11,16 +11,14 @@ const MODEL_PATH = "/raiden.glb";
 const BASE_ROTATION = [0, 0.35, Math.PI + 0.18];
 
 // Layout
-const BOTTOM_GAP = 0.1;  // space kept at the bottom (world units)
-const RIGHT_GAP = 0.3;   // space kept at the right edge (world units)
-const MOBILE_EDGE_GAP_RATIO = 0.03;
+const BOTTOM_GAP = 0.1;
 
 // Intro animation
 const INTRO_DELAY = 0.3;
 const INTRO_DURATION = 2.0;
 const INTRO_SPINS = 1;
-const INTRO_FROM_X = 0.55;  // start distance to the right (fraction of screen width)
-const INTRO_FROM_Y = -1.0;  // negative = rises from below, never passes behind the navbar
+const INTRO_FROM_X = 0.55;
+const INTRO_FROM_Y = -1.0;
 
 // Idle movement when resting
 const IDLE_BOB = 0.1;
@@ -48,7 +46,7 @@ export function Astronaut({ position, scale = 30 }) {
   const { viewport, size } = useThree();
   const isMobile = size.width < 768;
 
-  // Model bounds at scale 1 in its starting pose, relative to its pivot
+  // Model bounds at scale 1 in its starting pose
   const bounds = useMemo(() => {
     const prevScale = scene.scale.clone();
     const prevRot = scene.rotation.clone();
@@ -62,32 +60,29 @@ export function Astronaut({ position, scale = 30 }) {
     return box;
   }, [scene]);
 
-  // Fit the full model bounds inside this Canvas, including its idle motion.
-  const availableHeight = viewport.height - BOTTOM_GAP * 2 - IDLE_BOB * 2;
+  // Layout: text zone on top, model fills the rest
   const modelHeight1 = Math.max(bounds.max.y - bounds.min.y, 0.0001);
   const modelWidth1 = Math.max(bounds.max.x - bounds.min.x, 0.0001);
+  const centerY1 = (bounds.min.y + bounds.max.y) / 2;
+  const centerX1 = (bounds.min.x + bounds.max.x) / 2;
 
-  const horizontalGap = isMobile
-    ? viewport.width * MOBILE_EDGE_GAP_RATIO
-    : RIGHT_GAP;
-  const availableWidth = viewport.width - horizontalGap * 2 - IDLE_DRIFT * 2;
-  const modelScale = Math.min(
-    scale,
-    availableHeight / modelHeight1,
-    availableWidth / modelWidth1,
-  );
+  const topReserve = viewport.height * (isMobile ? 0.34 : 0.1);
+  const availableHeight =
+    viewport.height - topReserve - BOTTOM_GAP - IDLE_BOB * 2;
 
-  const fitY = -((bounds.min.y + bounds.max.y) / 2) * modelScale;
-  const minX =
-    -viewport.width / 2 - bounds.min.x * modelScale + horizontalGap;
-  const maxX =
-    viewport.width / 2 - bounds.max.x * modelScale - horizontalGap;
-  const wantedX = viewport.width * 0.12;
-  const modelPosition = position ?? [
-    isMobile ? 0 : THREE.MathUtils.clamp(wantedX, minX, maxX),
-    fitY,
-    0,
-  ];
+  let modelScale = Math.min(scale, availableHeight / modelHeight1);
+  if (isMobile) {
+    modelScale = Math.min(modelScale, (viewport.width * 1.15) / modelWidth1);
+  }
+
+  const regionCenterY =
+    -viewport.height / 2 + BOTTOM_GAP + IDLE_BOB + availableHeight / 2;
+  const fitY = regionCenterY - centerY1 * modelScale;
+
+  const targetX = isMobile ? 0 : viewport.width * 0.28;
+  const fitX = targetX - centerX1 * modelScale;
+
+  const modelPosition = position ?? [fitX, fitY, 0];
 
   useFrame((state, delta) => {
     const intro = introRef.current;
@@ -98,7 +93,6 @@ export function Astronaut({ position, scale = 30 }) {
     if (startTime.current === null) startTime.current = now;
     const elapsed = now - startTime.current;
 
-    // 1) Intro: slide in from the right, rise from below, spin, grow, settle
     const p = clamp01((elapsed - INTRO_DELAY) / INTRO_DURATION);
     const eCubic = easeOutCubic(p);
     const eBack = easeOutBack(p);
@@ -113,7 +107,6 @@ export function Astronaut({ position, scale = 30 }) {
     }
     if (p >= 1) introDone.current = true;
 
-    // 2) Small idle movement once the intro has finished
     idleAmount.current = THREE.MathUtils.lerp(
       idleAmount.current,
       introDone.current ? 1 : 0,
