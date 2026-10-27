@@ -12,6 +12,28 @@ const socialLinks = [
   },
   {
     id: 2,
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/abdul-karim-kamal-s-4524352a0/",
+    hoverClass: "hover:border-sky-400 hover:shadow-[0_0_25px_rgba(56,189,248,0.3)]",
+    icon: (
+      <svg className="w-7 h-7 fill-[#0A66C2] group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V8.99h3.56v11.46ZM22.22 0H1.78C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.78 24h20.43c.98 0 1.79-.77 1.79-1.73V1.73C24 .77 23.19 0 22.22 0Z" />
+      </svg>
+    ),
+  },
+  {
+    id: 3,
+    name: "Instagram",
+    link: "https://www.instagram.com/s_abdul_.14_/?hl=en",
+    hoverClass: "hover:border-pink-400 hover:shadow-[0_0_25px_rgba(244,114,182,0.3)]",
+    icon: (
+      <svg className="w-7 h-7 fill-[#E4405F] group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+      </svg>
+    ),
+  },
+  {
+    id: 4,
     name: "WhatsApp",
     link: "https://wa.me/919345288125",
     hoverClass: "hover:border-green-400 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]",
@@ -22,7 +44,7 @@ const socialLinks = [
     ),
   },
   {
-    id: 4,
+    id: 5,
     name: "Gmail",
     link: "mailto:abdulkarimkamal@gmail.com",
     hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
