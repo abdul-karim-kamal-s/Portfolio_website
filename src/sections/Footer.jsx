@@ -23,17 +23,6 @@ const socialLinks = [
   },
   {
     id: 3,
-    name: "Instagram",
-    link: "https://www.instagram.com/s_abdul_.14_/?hl=en",
-    hoverClass: "hover:border-pink-400 hover:shadow-[0_0_25px_rgba(244,114,182,0.3)]",
-    icon: (
-      <svg className="w-7 h-7 fill-[#E4405F] group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
-      </svg>
-    ),
-  },
-  {
-    id: 4,
     name: "WhatsApp",
     link: "https://wa.me/919345288125",
     hoverClass: "hover:border-green-400 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]",
@@ -44,21 +33,16 @@ const socialLinks = [
     ),
   },
   {
-    id: 5,
+    id: 4,
     name: "Gmail",
     link: "mailto:abdulkarimkamal@gmail.com",
     hoverClass: "hover:border-neutral-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
-        {/* Blue Left Leg */}
         <path fill="#4285F4" d="M2.25 18.75v-9.375l4.5 3.375v8.25H3.75A1.5 1.5 0 0 1 2.25 18.75Z" />
-        {/* Green Right Leg */}
         <path fill="#34A853" d="M21.75 18.75v-9.375l-4.5 3.375v8.25h3A1.5 1.5 0 0 0 21.75 18.75Z" />
-        {/* Yellow Top-Right Fold */}
         <path fill="#FBBC04" d="M21.75 9.375V5.25A1.5 1.5 0 0 0 19.33 4.2L17.25 5.75v7z" />
-        {/* Dark Red Top-Left Fold (This was the missing piece!) */}
         <path fill="#C5221F" d="M2.25 9.375V5.25A1.5 1.5 0 0 1 4.67 4.2L6.75 5.75v7z" />
-        {/* Red Center Arch */}
         <path fill="#EA4335" d="M6.75 12.75 12 16.5l5.25-3.75v-7L12 9.5l-5.25-3.75z" />
       </svg>
     ),
