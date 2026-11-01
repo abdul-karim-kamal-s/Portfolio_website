@@ -38,6 +38,32 @@ export const myProjects = [
     ],
   },
   {
+    id: 6,
+    title: "Vyuha: AI-Driven Robot That Digitizes Any Place into VR",
+    category: "Robotics & VR",
+    description:
+      "The system combines an agile bipedal mechanical chassis featuring proximal actuation and carbon-fiber linkages with a high-rate LiDAR-IMU spatial telemetry payload, with acquired motion and perceptual data filtered, stabilized and processed by an edge-accelerated spatial computing engine before being broadcast to a low-latency WebRTC streaming core. Reconstructed environmental geometry and volumetric fields are synthesized directly onboard into an interactive 1:1 photorealistic digital twin. An adaptive locomotion controller continuously evaluates ground-reaction forces, inverted pendulum equilibrium and step-clearance trajectories to stabilize the torso platform directly, optimize foot-clearance envelopes over stairs and irregular rubble or trigger dynamic balance recovery when sudden surface slips or disturbances occur. Walking starts autonomously or via teleoperation, adjusting gait kinematics dynamically to maintain level torso orientation across steep steps, narrow catwalks and broken terrain. Torso-mounted environmental and vision sensors further support an industrial-specific telepresence pipeline that converts high-frequency SLAM and neural spatial telemetry into continuous 3D Gaussian Splats, providing an immediate tactical immersion signal to stream a collision-ready, photorealistic virtual environment directly into remote Virtual Reality headsets and cloud dashboards for real-time inspection without exposing human personnel to hazardous catastrophe sites.",
+    href: "https://sketchfab.com/3d-models/vyuha-bipedal-robot-for-vr-digital-twins-b02625b206b741f29352e40369b1438a",
+    logo: "/assets/projects/vyuha-logo.png",
+    titleLogo: "/assets/projects/vyuha-logo.png",
+    image: "/assets/projects/vyuha-overview.jpeg",
+    images: [
+      "/assets/projects/vyuha-overview.jpeg",
+      "/assets/projects/vyuha-rear-view.jpeg",
+      "/assets/projects/vyuha-vr-headset.jpeg",
+      "/assets/projects/vyuha-vr-controllers.jpeg",
+       "/assets/projects/vyuha-robot-detail.jpeg",
+      "/assets/projects/vyuha-actuator-layout.jpeg",
+    ],
+    tags: [
+      {
+        id: 1,
+        name: "Robotics & VR",
+        path: "/assets/projects/vyuha-logo.png",
+      },
+    ],
+  },
+  {
     id: 3,
     title: "NEERVA: Smart Water Purification and Quality Monitoring System",
     description:
